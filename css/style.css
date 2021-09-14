@@ -1,3 +1,27 @@
+body {
+    background-color: #ddd;
+}
+
 h1 {
-    font-size: 80px;
+    font-size: 60px;
+}
+
+.container {
+    width: 1400px;
+    background-color: violet;
+    margin: auto;
+    padding: 10px;
+}
+
+.artworkhome li {
+    float: left;
+}
+
+.artworkhome li span {
+    text-align: center;
+    display: block;
+}
+
+.clear {
+    clear: both;
 }
