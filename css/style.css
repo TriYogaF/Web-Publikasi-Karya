@@ -3,7 +3,23 @@ body {
 }
 
 h1 {
-    font-size: 60px;
+    font-size: 40px;
+}
+
+.header {
+    height: 60px;
+    background-color: aquamarine;
+}
+
+
+.buttonconfig li {
+    float: right;
+    margin-left: 10px;
+}
+
+.buttonmenu li {
+    display: inline-block;
+
 }
 
 .container {
