@@ -1,38 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+
     <title>Web Publikasi Karya</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <div class="header">
-        <h1>Web Publikasi Karya</h1>
-        <div class="button">
-            <ul class="buttonconfig">
-                <li><a href="">Account</a></li>
-                <li><a href="">Search</a></li>
-            </ul>
-            <ul><div class="buttonmenu">
-                <li><a href="">Literatur</a></li>
-                <li><a href="">Artwork</a></li>
-            </div></ul>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Web Publikasi Karya</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Artwork</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Literatur</a>
+            </li>
+            <li class="nav-item">
+              <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+              </form>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-success" href="#" role="button"><i class="bi bi-person-square"></i></a>
+            </li>
+          </ul>
         </div>
-        
-    </div>
-    <div class="container">
-        <ul class="artworkhome">
-            <li><a href=""><img src="img/amogus1.png" alt="">
-            <span>Gambar 1</span></a></li>
-            <li><a href=""><img src="img/amogus1.png" alt="">
-            <span>Gambar 1</span></a></li>
-            <div class="clear"></div>
-            
-        </ul>
-    </div>
-    
-</body>
+      </div>
+    </nav>
+
+    <!-- Akhir Navbar -->
+    <!-- About -->
+    <section class="about text-center">
+      <h2 class="display-6">About Website</h2>
+      <p class="lead">Merupakan sebuah website yang.</p>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path
+          fill="#fff"
+          fill-opacity="1"
+          d="M0,64L48,69.3C96,75,192,85,288,122.7C384,160,480,224,576,229.3C672,235,768,181,864,160C960,139,1056,149,1152,160C1248,171,1344,181,1392,186.7L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+        ></path>
+      </svg>
+    </section>
+
+    <!-- Akhir About -->
+    <!-- Content -->
+    <section id="content">
+      <div class="container">
+        <div class="popart">
+          <div class="row">
+            <div class="col">
+              <h2>Popular Artwork</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="card" style="width: 18rem">
+                <img src="img/amogus1.png" class="card-img-top" alt="1" />
+                <div class="card-body">
+                  <p class="card-text">1.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card" style="width: 18rem">
+                <img src="img/amogus1.png" class="card-img-top" alt="1" />
+                <div class="card-body">
+                  <p class="card-text">1.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card" style="width: 18rem">
+                <img src="img/amogus1.png" class="card-img-top" alt="1" />
+                <div class="card-body">
+                  <p class="card-text">1.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card" style="width: 18rem">
+                <img src="img/amogus1.png" class="card-img-top" alt="1" />
+                <div class="card-body">
+                  <p class="card-text">1.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="poplit">
+          <div class="row">
+            <div class="col">
+              <h2>Popular Literatur</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="card" style="width: 18rem">
+                <img src="img/amogus1.png" class="card-img-top" alt="1" />
+                <div class="card-body">
+                  <p class="card-text">1.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card" style="width: 18rem">
+                <img src="img/amogus1.png" class="card-img-top" alt="1" />
+                <div class="card-body">
+                  <p class="card-text">1.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card" style="width: 18rem">
+                <img src="img/amogus1.png" class="card-img-top" alt="1" />
+                <div class="card-body">
+                  <p class="card-text">1.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card" style="width: 18rem">
+                <img src="img/amogus1.png" class="card-img-top" alt="1" />
+                <div class="card-body">
+                  <p class="card-text">1.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Akhir Content -->
+
+    <!-- Footer -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path
+        fill="#198754"
+        fill-opacity="1"
+        d="M0,160L30,181.3C60,203,120,245,180,240C240,235,300,181,360,165.3C420,149,480,171,540,165.3C600,160,660,128,720,149.3C780,171,840,245,900,234.7C960,224,1020,128,1080,101.3C1140,75,1200,117,1260,149.3C1320,181,1380,203,1410,213.3L1440,224L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"
+      ></path>
+    </svg>
+    <footer class="text-white bg-success text-center p-3">
+      <p>© by Web Publikasi Karya 2021</p>
+    </footer>
+    <!-- Akhir Footer -->
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
 </html>

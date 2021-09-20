@@ -1,43 +1,9 @@
-body {
-    background-color: #ddd;
+.about {
+  padding-top: 50px;
+  background-color: #198754;
 }
 
-h1 {
-    font-size: 40px;
-}
-
-.header {
-    height: 60px;
-    background-color: aquamarine;
-}
-
-
-.buttonconfig li {
-    float: right;
-    margin-left: 10px;
-}
-
-.buttonmenu li {
-    display: inline-block;
-
-}
-
-.container {
-    width: 1400px;
-    background-color: violet;
-    margin: auto;
-    padding: 10px;
-}
-
-.artworkhome li {
-    float: left;
-}
-
-.artworkhome li span {
-    text-align: center;
-    display: block;
-}
-
-.clear {
-    clear: both;
+.popart,
+.poplit {
+  padding-top: 5rem;
 }
