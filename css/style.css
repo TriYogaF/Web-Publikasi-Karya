@@ -22,8 +22,23 @@ body {
 } */
 
 .popart,
-.poplit {
+.poplit,
+.popcreator {
   background-color: white;
+}
+
+.card-body {
+  background-color: #a3a3c2;
+}
+
+.card-text {
+  font-weight: 600;
+}
+
+.popart .card:hover,
+.poplit .card:hover {
+  border: 2px solid black;
+  transition: 0.2s;
 }
 
 .carousel {
