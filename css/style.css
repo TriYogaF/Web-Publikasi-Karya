@@ -8,9 +8,6 @@ body {
 .judul {
   font-family: "Lobster Two", cursive;
 }
-.about {
-  padding-top: 50px;
-}
 
 /* .navbar,
 .footer {
@@ -35,8 +32,13 @@ body {
   font-weight: 600;
 }
 
-.popart .card:hover,
+/* .popart .card:hover,
 .poplit .card:hover {
+  border: 2px solid black;
+  transition: 0.2s;
+} */
+
+.card:hover {
   border: 2px solid black;
   transition: 0.2s;
 }
