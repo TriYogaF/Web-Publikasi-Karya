@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Manjari:wght@100;400&display=swap');
+
+body {
+    background-image: url(../assets/index/bg.png);
+    font-family: "Zilla Slab", serif;
+}
+
+.form-container {
+    background-color: #ffffff;
+    border: 2px solid black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 600px;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+    box-shadow: 3px 3px 10px 0px #000;
+    padding: 50px;
+}
+
+.textJudul {
+    font-family:'Manjari', sans-serif;
+}
+
+.textForm {
+    font-family:'Manjari', sans-serif;
+}
+
+.btn {
+    border-radius: 10px;
+}
+
+.text-link {
+    text-decoration: none;
+}
+
+.text-hover {
+    text-decoration: none;
+}
+
+.text-hover:hover {
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.text-hijau {
+    color: rgb(107, 167, 18);
+}
