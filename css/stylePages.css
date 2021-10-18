@@ -13,3 +13,41 @@ body {
 .poplit {
   background-color: white;
 }
+
+.wrapper {
+  margin: 100px 0px 40px auto;
+}
+
+.wrapper nav {
+  display: flex;
+  justify-content: center;
+}
+
+nav .items {
+  padding: 5px;
+  display: flex;
+  max-width: 1000px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+nav .items .item {
+  padding: 5px 20px;
+  font-size: 20px;
+  font-weight: 500;
+  color: black;
+  border: 2px solid black;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+nav .items .active,
+nav .items .item:hover {
+  color: white;
+  border: 2px solid white;
+  background-color: salmon;
+}
+
+/* #content {
+  padding-top: 10px;
+} */
