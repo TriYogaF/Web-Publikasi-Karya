@@ -48,6 +48,82 @@ nav .items .item:hover {
   background-color: salmon;
 }
 
+.popart {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.popart .image {
+  padding: 5px;
+  width: calc(100% / 4);
+}
+
+.popart .image.hide {
+  display: none;
+}
+.popart .image.show {
+  animation: animate 0.4s ease;
+}
+@keyframes animate {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.popart .image span {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+
+.popart .image img {
+  width: 100%;
+  vertical-align: middle;
+  transition: all 0.3s ease;
+}
+
+.popart .image:hover img {
+  transform: scale(1.2);
+}
+
 /* #content {
   padding-top: 10px;
 } */
+
+@media (max-width: 1000px) {
+  .popart .image {
+    width: calc(100% / 3);
+  }
+}
+@media (max-width: 800px) {
+  .popart .image {
+    width: calc(100% / 2);
+  }
+}
+@media (max-width: 700px) {
+  .wrapper nav .items {
+    max-width: 600px;
+  }
+  nav .items span {
+    padding: 7px 15px;
+  }
+}
+@media (max-width: 600px) {
+  .wrapper {
+    margin: 30px auto;
+  }
+  .wrapper nav .items {
+    padding-top: 80px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  nav .items span {
+    margin: 5px;
+  }
+  .popart .image {
+    width: 100%;
+  }
+}
