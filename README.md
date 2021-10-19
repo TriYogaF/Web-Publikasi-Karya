@@ -1,3 +1,3 @@
 # Web-Publikasi-Karya
 
-Merupakan sebuah web yang berisi tentang karya-karya baik berupa gambar maupun tulisan.
+Merupakan sebuah web yang berisi kumpulan karya dari para user yang berupa artwork dan literatur.
