@@ -25,9 +25,9 @@ window.onload = () => {
       });
     }
   };
-  for (let i = 0; i < filterImg.length; i++) {
-    filterImg[i].setAttribute("onclick", "preview(this)"); //adding onclick attribute in all available images
-  }
+  // for (let i = 0; i < filterImg.length; i++) {
+  //   filterImg[i].setAttribute("onclick", "preview(this)"); //adding onclick attribute in all available images
+  // }
 };
 
 // //fullscreen image preview function

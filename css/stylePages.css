@@ -58,6 +58,14 @@ nav .items .item:hover {
   width: calc(100% / 4);
 }
 
+.popart .image span a {
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
+  text-decoration: none;
+  margin: auto;
+}
+
 .popart .image.hide {
   display: none;
 }
