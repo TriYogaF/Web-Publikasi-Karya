@@ -39,9 +39,11 @@ nav .items .item:hover {
   background-color: salmon;
 }
 
+/* .content .container {
+} */
 .container .box {
   width: 900px;
-  margin-right: 50%;
+  margin-left: 16%;
   margin-top: 5rem;
 }
 
