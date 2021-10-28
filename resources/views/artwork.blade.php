@@ -36,10 +36,10 @@
               <a class="nav-link active" aria-current="page" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="artwork.html">Artwork</a>
+              <a class="nav-link" href="artwork">Artwork</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="literatur.html">Literatur</a>
+              <a class="nav-link" href="literatur">Literatur</a>
             </li>
             <li class="nav-item">
               <a class="btn btn-success" href="login.html" role="button"><i class="bi bi-person-square"></i></a>
