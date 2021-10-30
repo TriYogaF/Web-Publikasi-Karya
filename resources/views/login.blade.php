@@ -1,10 +1,9 @@
 @extends('layouts/main')
 @section('css')
-    <link rel="stylesheet" type="text/css" href="../css/login.css" />
+    <link rel="stylesheet" href="../css/login.css" />
 @endsection
     
 @section('container')
-    <div class="container">
       <form class="form-container">
         <h3 class="textJudul mb-5">Log In</h3>
         <div class="mb-3">
@@ -27,12 +26,11 @@
                 <button type="submit" class="btn btn-outline-primary textForm">Log In</button>
               </div>
               <div class="col text-end">
-                <a class="btn btn-primary" href="register.html" role="button">Register</a>
+                <a class="btn btn-primary" href="/register" role="button">Register</a>
               </div>
             </div>
           </div>
         </div>
       </form>
-    </div>
 @endsection
 

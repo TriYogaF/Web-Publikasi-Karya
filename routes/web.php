@@ -14,11 +14,32 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('index', [
+        "title" => "Home"
+    ]);
 });
 Route::get('/artwork', function () {
-    return view('artwork');
+    return view('artwork', [
+        "title" => "Artwork"
+    ]);
 });
 Route::get('/literatur', function () {
-    return view('literatur');
+    return view('literatur', [
+        "title" => "Literatur"
+    ]);
+});
+Route::get('/login', function () {
+    return view('login', [
+        "title" => "Login"
+    ]);
+});
+Route::get('/register', function () {
+    return view('register', [
+        "title" => "Register"
+    ]);
+});
+Route::get('/artpage', function () {
+    return view('artpage', [
+        "title" => "Artpage"
+    ]);
 });

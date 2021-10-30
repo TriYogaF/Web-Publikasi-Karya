@@ -27,7 +27,7 @@
         <div class="popart my-3 p-3 border border-3 border-success rounded-3">
           <div class="image" data-name="drawing">
             <span><img src="../assets/artwork/a1.jpg" alt="" /></span>
-            <span><a href="#" class="caption py-1">Artwork 1</a></span>
+            <span><a href="/artpage" class="caption py-1">Artwork 1</a></span>
           </div>
           <div class="image" data-name="drawing">
             <span><img src="../assets/artwork/a2.jpg" alt="" /></span>

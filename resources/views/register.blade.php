@@ -31,7 +31,7 @@
           <button type="submit" class="btn btn-primary">Register Now</button>
         </div>
         <div class="mb-3">
-          <label>Have an account? <a href="login.html" class="text-link text-hover">Click in here</a></label>
+          <label>Have an account? <a href="/login" class="text-link text-hover">Click in here</a></label>
         </div>
       </form>
     </div>

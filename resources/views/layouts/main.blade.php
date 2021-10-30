@@ -17,45 +17,135 @@
     <title>Web Publikasi Karya</title>
   </head>
   <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
-      <div class="container">
-        <a class="navbar-brand judul fs-4" href="/">Web Publikasi Karya</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="search_bar">
-          <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-            <button class="btn btn-success" type="submit"><i class="bi bi-search"></i></button>
-          </form>
-        </div>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/artwork">Artwork</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/literatur">Literatur</a>
-            </li>
-            <li class="nav-item">
-              <a class="btn btn-success" href="/login" role="button"><i class="bi bi-person-square"></i></a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <!-- Akhir Navbar -->
+    
+    @include('partials/navbar')
 
     @yield('container')
 
     <!-- Footer -->
-    <footer class="text-white bg-success text-center p-3">
+    {{-- <footer class="text-white bg-success text-center p-3">
       <p>© by Web Publikasi Karya 2021</p>
-    </footer>
+    </footer> --}}
+    <footer
+          class="text-center text-lg-start text-white"
+          style="background-color: #929fba"
+          >
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+      <!-- Section: Links -->
+      <section class="">
+        <!--Grid row-->
+        <div class="row">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Web Publikasi Karya</h6>
+            <p>Merupakan sebuah website yang berisi kumpulan karya dari orang-orang yang kesulitan mempublikasikan karyanya secara mandiri.</p>
+          </div>
+          <!-- Grid column -->
+
+          <hr class="w-100 clearfix d-md-none" />
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
+            <p>
+              <a href="#" class="text-white text-decoration-none">Artwork</a>
+            </p>
+            <p>
+              <a href="#" class="text-white text-decoration-none">Literatur</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <hr class="w-100 clearfix d-md-none" />
+
+          <!-- Grid column -->
+          <hr class="w-100 clearfix d-md-none" />
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+            <p><i class="fas fa-home mr-3"></i> Mondstadt, Teyvat</p>
+            <p><i class="fas fa-envelope mr-3"></i> webpublikasikarya@gmail.com</p>
+            <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Follow us</h6>
+
+            <!-- Facebook -->
+            <a
+               class="btn btn-primary btn-floating m-1"
+               style="background-color: #3b5998"
+               href="#!"
+               role="button"
+               ><i class="bi bi-facebook"></i>
+            </a>
+
+            <!-- Twitter -->
+            <a
+               class="btn btn-primary btn-floating m-1"
+               style="background-color: #55acee"
+               href="#!"
+               role="button"
+               ><i class="bi bi-twitter"></i>
+            </a>
+
+            <!-- Google -->
+            <a
+               class="btn btn-primary btn-floating m-1"
+               style="background-color: #dd4b39"
+               href="#!"
+               role="button"
+               ><i class="bi bi-google"></i>
+            </a>
+
+            <!-- Instagram -->
+            <a
+               class="btn btn-primary btn-floating m-1"
+               style="background-color: #ac2bac"
+               href="#!"
+               role="button"
+               ><i class="bi bi-instagram"></i>
+            </a>
+
+            <!-- Linkedin -->
+            <a
+               class="btn btn-primary btn-floating m-1"
+               style="background-color: #0082ca"
+               href="#!"
+               role="button"
+               ><i class="bi bi-linkedin"></i>
+            </a>
+            <!-- Github -->
+            <a
+               class="btn btn-primary btn-floating m-1"
+               style="background-color: #333333"
+               href="#!"
+               role="button"
+               ><i class="bi bi-github"></i>
+            </a>
+          </div>
+        </div>
+        <!--Grid row-->
+      </section>
+      <!-- Section: Links -->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div
+         class="text-center p-3"
+         style="background-color: rgba(0, 0, 0, 0.2)">
+      © 2021 Copyright:
+      <a class="text-white text-decoration-none" href="http://web-publikasi-karya.test/"
+         >web-publikasi-karya.com</a>
+    </div>
+    <!-- Copyright -->
+</footer>
+      <!-- End of .container -->
     <!-- Akhir Footer -->
 
     <!-- Optional JavaScript; choose one of the two! -->
