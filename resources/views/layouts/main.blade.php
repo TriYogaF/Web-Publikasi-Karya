@@ -28,7 +28,7 @@
     </footer> --}}
     <footer
           class="text-center text-lg-start text-white"
-          style="background-color: #929fba"
+          style="background-color: #3ddb92"
           >
     <!-- Grid container -->
     <div class="container p-4 pb-0">
@@ -138,7 +138,7 @@
     <!-- Copyright -->
     <div
          class="text-center p-3"
-         style="background-color: rgba(0, 0, 0, 0.2)">
+         style="background-color: #198754">
       © 2021 Copyright:
       <a class="text-white text-decoration-none" href="http://web-publikasi-karya.test/"
          >web-publikasi-karya.com</a>
