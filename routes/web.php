@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArtController;
 use App\Models\Artwork;
 use Illuminate\Support\Facades\Route;
 
@@ -20,42 +21,9 @@ Route::get('/', function () {
     ]);
 });
 
-// $art_posts = [
-//     [
-//         "caption" => "Artwork 1",
-//         "data-name" => "drawing",
-//         "img" => "a1.jpg",
-//         "slug" => "artwork-1"
-//     ],
-//     [
-//         "caption" => "Artwork 2",
-//         "data-name" => "drawing",
-//         "img" => "a2.jpg",
-//         "slug" => "artwork-2"
-//     ]
-//     ];
-Route::get('/artwork', function () {
+Route::get('/artwork', [ArtController::class, 'index']);
+Route::get('/artwork/{slug}', [ArtController::class, 'show']);
 
-    return view('artwork', [
-        "title" => "Artwork",
-        "posts" => Artwork::all()
-    ]);
-});
-
-
-Route::get('/artwork/{slug}', function ($slug) {
-
-    // $new_art=[];
-    // foreach ($art_posts as $post) {
-    // if($post["slug"] === $slug){
-    //     $new_art = $post;
-    //     }
-    // }
-    return view('artpage', [
-        "title" => "Artpage",
-        "post" => Artwork::find($slug)
-    ]);
-});
 
 Route::get('/literatur', function () {
     return view('literatur', [
