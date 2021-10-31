@@ -13,10 +13,10 @@ class ArtController extends Controller
             "posts" => Artwork::all()
         ]);
     }
-    public function show($slug){
+    public function show($id){
         return view('artpage', [
             "title" => "Artpage",
-            "post" => Artwork::find($slug)
+            "post" => Artwork::find($id)
         ]);
     }
 }

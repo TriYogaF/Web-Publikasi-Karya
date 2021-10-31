@@ -18,10 +18,10 @@
       <div class="container">
         <!-- Popart -->
         <div class="box bg-light">
-          <img src="../assets/artwork/{{ $post["img"] }}" class="img-fluid" alt="..." />
+          <img src="/assets/artwork/{{ $post->img }}" class="img-fluid" alt="..." />
           <figure class="text-center">
             <blockquote class="blockquote">
-              <p>{{ $post["title"] }}</p>
+              <p>{{ $post->title }}</p>
             </blockquote>
             <figcaption class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></figcaption>
           </figure>
