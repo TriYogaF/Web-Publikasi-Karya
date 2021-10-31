@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ArtController;
+use App\Models\Artwork;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,11 +16,27 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('index', [
+        "title" => "Home"
+    ]);
 });
-Route::get('/artwork', function () {
-    return view('artwork');
-});
+
+Route::get('/artwork', [ArtController::class, 'index']);
+Route::get('/artwork/{slug}', [ArtController::class, 'show']);
+
+
 Route::get('/literatur', function () {
-    return view('literatur');
+    return view('literatur', [
+        "title" => "Literatur"
+    ]);
+});
+Route::get('/login', function () {
+    return view('login', [
+        "title" => "Login"
+    ]);
+});
+Route::get('/register', function () {
+    return view('register', [
+        "title" => "Register"
+    ]);
 });
