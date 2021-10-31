@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Artwork;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,66 +20,40 @@ Route::get('/', function () {
     ]);
 });
 
-$art_posts = [
-    [
-        "caption" => "Artwork 1",
-        "data-name" => "drawing",
-        "img" => "a1.jpg",
-        "slug" => "artwork-1"
-    ],
-    [
-        "caption" => "Artwork 2",
-        "data-name" => "drawing",
-        "img" => "a2.jpg",
-        "slug" => "artwork-2"
-    ]
-    ];
+// $art_posts = [
+//     [
+//         "caption" => "Artwork 1",
+//         "data-name" => "drawing",
+//         "img" => "a1.jpg",
+//         "slug" => "artwork-1"
+//     ],
+//     [
+//         "caption" => "Artwork 2",
+//         "data-name" => "drawing",
+//         "img" => "a2.jpg",
+//         "slug" => "artwork-2"
+//     ]
+//     ];
 Route::get('/artwork', function () {
-    $art_posts = [
-        [
-            "caption" => "Artwork 1",
-            "data-name" => "drawing",
-            "img" => "a1.jpg",
-            "slug" => "artwork-1"
-        ],
-        [
-            "caption" => "Artwork 2",
-            "data-name" => "drawing",
-            "img" => "a2.jpg",
-            "slug" => "artwork-2"
-        ]
-        ];
+
     return view('artwork', [
         "title" => "Artwork",
-        "posts" => $art_posts
+        "posts" => Artwork::all()
     ]);
 });
 
 
 Route::get('/artwork/{slug}', function ($slug) {
-    $art_posts = [
-        [
-            "caption" => "Artwork 1",
-            "data-name" => "drawing",
-            "img" => "a1.jpg",
-            "slug" => "artwork-1"
-        ],
-        [
-            "caption" => "Artwork 2",
-            "data-name" => "drawing",
-            "img" => "a2.jpg",
-            "slug" => "artwork-2"
-        ]
-        ];
-    $new_art=[];
-    foreach ($art_posts as $post) {
-    if($post["slug"] === $slug){
-        $new_art = $post;
-        }
-    }
+
+    // $new_art=[];
+    // foreach ($art_posts as $post) {
+    // if($post["slug"] === $slug){
+    //     $new_art = $post;
+    //     }
+    // }
     return view('artpage', [
         "title" => "Artpage",
-        "post" => $new_art
+        "post" => Artwork::find($slug)
     ]);
 });
 
