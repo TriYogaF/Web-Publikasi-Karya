@@ -29,7 +29,7 @@
           @foreach ($posts as $post)
           <div class="image" data-name="{{ $post->data_name }}">
             <span><img src="/assets/artwork/{{ $post->img }}" alt="" /></span>
-            <span><a href="/artwork/{{ $post->id }}" class="caption py-1">{{ $post->title }}</a></span>
+            <span><a href="/artwork/{{ $post->slug }}" class="caption py-1">{{ $post->title }}</a></span>
           </div>
           @endforeach
         </div>

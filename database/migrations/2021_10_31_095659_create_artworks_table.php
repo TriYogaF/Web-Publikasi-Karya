@@ -17,6 +17,7 @@ class CreateArtworksTable extends Migration
             $table->id();
             $table->string("data_name");
             $table->string("title");
+            $table->string("slug")->unique();
             $table->string("img");
             $table->timestamps();
         });

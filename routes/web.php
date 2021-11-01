@@ -22,7 +22,7 @@ Route::get('/', function () {
 });
 
 Route::get('/artwork', [ArtController::class, 'index']);
-Route::get('/artwork/{slug}', [ArtController::class, 'show']);
+Route::get('/artwork/{art:slug}', [ArtController::class, 'show']);
 
 
 Route::get('/literatur', function () {
