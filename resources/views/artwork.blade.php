@@ -10,7 +10,7 @@
       {{-- Hero Banner --}}
     @if ($posts->count())
     <div class="card mb-3">
-      <img src="https://api.unsplash.com/search/photos?query={{ $posts[0]->data_name }}" class="card-img-top" alt="...">
+      <img src="{{ $posts[0]->img }}" class="card-img-top" alt="...">
       <div class="card-body text-center">
         <h5 class="card-title"><a href="/artwork/{{ $posts[0]->slug }}">{{ $posts[0]->title }}</a></h5>
         <p><a href="/authors/{{ $posts[0]->author->username }}" class="text-decoration-none">by {{ $posts[0]->author->name }}</a></p>
