@@ -34,10 +34,19 @@ Route::get('/literatur', function () {
 
 Route::get('/authors/{author:username}', function (User $author) {
     return view('author', [
-        "title" => "Author",
-        "post" => $author->artwork
+        "title" => "Karya",$author->name,
+        "posts" => $author->artwork,
+        "author" => $author
     ]);
 });
+
+// Route::get('/authors/{author:username}/art', function (User $author) {
+//     return view('artwork', [
+//         "title" => "Artwork Author",
+//         "posts" => $author->artwork,
+//         // "author" => $author
+//     ]);
+// });
 
 Route::get('/login', function () {
     return view('login', [

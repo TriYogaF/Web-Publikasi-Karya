@@ -9,7 +9,7 @@
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a class="text-decoration-none text-dark" href="/">Home</a></li>
       <li class="breadcrumb-item"><a class="text-decoration-none text-dark" href="/artwork">Artwork</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Artwork contoh</li>
+      <li class="breadcrumb-item active" aria-current="page">{{ $post->title }}</li>
     </ol>
   </nav>
   {{-- Akhir Breadcrumb --}}
