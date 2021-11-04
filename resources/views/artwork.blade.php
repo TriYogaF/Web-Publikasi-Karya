@@ -5,6 +5,23 @@
 @endsection
 
 @section('container')
+    
+    <div class="container">
+      {{-- Hero Banner --}}
+    @if ($posts->count())
+    <div class="card mb-3">
+      <img src="https://api.unsplash.com/search/photos?query={{ $posts[0]->data_name }}" class="card-img-top" alt="...">
+      <div class="card-body text-center">
+        <h5 class="card-title"><a href="/artwork/{{ $posts[0]->slug }}">{{ $posts[0]->title }}</a></h5>
+        <p><a href="/authors/{{ $posts[0]->author->username }}" class="text-decoration-none">by {{ $posts[0]->author->name }}</a></p>
+        <p class="card-text">{{ $posts[0]->caption }}</p>
+        <p class="card-text"><small class="text-muted">Last updated {{ $posts[0]->created_at->diffForHumans() }}</small></p>
+      </div>
+    </div>
+    @else
+    <p class="fs-4">no artwork found.</p>
+    @endif
+    
     <!-- Filter -->
     <div class="wrapper">
       <nav>
@@ -36,4 +53,6 @@
       </div>
     </section>
     <!-- Akhir Content -->
+    </div>
+    
     @endsection

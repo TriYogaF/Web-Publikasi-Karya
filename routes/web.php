@@ -34,7 +34,7 @@ Route::get('/literatur', function () {
 
 Route::get('/authors/{author:username}', function (User $author) {
     return view('author', [
-        "title" => "Karya",$author->name,
+        "title" => $author->name,
         "posts" => $author->artwork,
         "author" => $author
     ]);

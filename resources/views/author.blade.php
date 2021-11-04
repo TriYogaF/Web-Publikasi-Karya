@@ -18,16 +18,17 @@
       <div class="container">
         <!-- Popart -->
         <div class="box bg-light text-center border border-2 rounded mb-5">
-          <h1>Halaman Author</h1>
+          <h1 class="my-3">Halaman Author</h1>
           <div class="card mb-3 mx-3">
             <img src="../assets/index/hu.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+              <h5 class="card-title">{{ $title }}</h5>
               <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
             </div>
           </div>
 
           <div class="popart my-3 p-3 ">
+              <h3>Artwork</h3>
             <div class="wrapper">
                 <nav>
                   <div class="items">

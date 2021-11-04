@@ -10,7 +10,7 @@ class ArtworkController extends Controller
     public function index(){
         return view('artwork', [
             "title" => "Artwork",
-            "posts" => Artwork::all()
+            "posts" => Artwork::latest()->get()
         ]);
     }
     public function show(Artwork $art){
