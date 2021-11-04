@@ -18,13 +18,7 @@
       <div class="container">
         <!-- Popart -->
         <div class="box bg-light">
-          <img src="{{ $post->img }}" class="img-fluid" alt="..." />
-          <figure class="text-center">
-            <h5 class="mt-1">{{ $post->title }}</h5>
-            <figcaption class="blockquote">Someone famous in Source Title</figcaption>
-            <figcaption class="blockquote-footer"><a href="/authors/{{ $post->author->username }}">{{ $post->author->name }}</a></figcaption>
-            
-          </figure>
+          <h1>Halaman Author</h1>
         </div>
       </div>
     </section>

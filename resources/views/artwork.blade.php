@@ -28,7 +28,7 @@
         <div class="popart my-3 p-3 border border-3 border-success rounded-3">
           @foreach ($posts as $post)
           <div class="image" data-name="{{ $post->data_name }}">
-            <span><img src="/assets/artwork/{{ $post->img }}" alt="" /></span>
+            <span><img src="{{ $post->img }}" alt="" /></span>
             <span><a href="/artwork/{{ $post->slug }}" class="caption py-1">{{ $post->title }}</a></span>
           </div>
           @endforeach

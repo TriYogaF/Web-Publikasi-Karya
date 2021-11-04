@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Artwork;
 use Illuminate\Http\Request;
 
-class ArtController extends Controller
+class ArtworkController extends Controller
 {
     public function index(){
         return view('artwork', [

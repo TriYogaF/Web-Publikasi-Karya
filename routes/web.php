@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\ArtController;
+use App\Models\User;
 use App\Models\Artwork;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ArtworkController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,8 +22,8 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/artwork', [ArtController::class, 'index']);
-Route::get('/artwork/{art:slug}', [ArtController::class, 'show']);
+Route::get('/artwork', [ArtworkController::class, 'index']);
+Route::get('/artwork/{art:slug}', [ArtworkController::class, 'show']);
 
 
 Route::get('/literatur', function () {
@@ -30,6 +31,14 @@ Route::get('/literatur', function () {
         "title" => "Literatur"
     ]);
 });
+
+Route::get('/authors/{author:username}', function (User $author) {
+    return view('author', [
+        "title" => "Author",
+        "post" => $author->artwork
+    ]);
+});
+
 Route::get('/login', function () {
     return view('login', [
         "title" => "Login"
