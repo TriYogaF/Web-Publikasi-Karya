@@ -58,6 +58,11 @@
           @endforeach
         </div>
       </div>
+      <div class="d-flex justify-content-center">
+        <button wire:click="load" type="button" class="btn btn-primary">
+          load more..
+        </button>
+      </div>
     </section>
     <!-- Akhir Content -->
   </div>

@@ -4,6 +4,7 @@ use App\Models\User;
 use App\Models\Artwork;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArtworkController;
+use App\Http\Livewire\LoadArtwork;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,12 +27,8 @@ Route::get('/', function () {
 Route::get('/artwork', [ArtworkController::class, 'index']);
 Route::get('/artwork/{art:slug}', [ArtworkController::class, 'show']);
 
-Route::get('/artwork/tag', function () {    
-    return view('tag', [
-        "title" => "Tag",
-        "active" => "artwork"
-    ]);
-});
+Route::get('/load-artwork', [LoadArtwork::class, 'render']);
+
 
 Route::get('/literatur', function () {
     return view('literatur', [

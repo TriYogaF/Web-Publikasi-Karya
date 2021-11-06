@@ -9,22 +9,22 @@
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a class="text-decoration-none text-dark" href="/">Home</a></li>
       <li class="breadcrumb-item"><a class="text-decoration-none text-dark" href="/artwork">Artwork</a></li>
-      <li class="breadcrumb-item active" aria-current="page">{{ $post->title }}</li>
+      <li class="breadcrumb-item active" aria-current="page">{{ $title }}</li>
     </ol>
   </nav>
   {{-- Akhir Breadcrumb --}}
     <!-- Content -->
     <section id="content">
-      <div class="container">
+      <div class="container bg-white">
         
-        <button type="button" class="btn btn-primary">
-            <div class="card bg-dark text-white">
-                <img src="../assets/index/1.png" class="card-img" alt="...">
+        <a class="btn" href="/tag/{art:data_name}" role="button">
+            <div class="card bg-light text-dark">
+                <img src="../assets/index/1.gif" class="card-img" alt="...">
                 <div class="card-img-overlay">
-                  <h5 class="card-title">Card title</h5>
+                  <h5 class="card-title ">Card title</h5>
                 </div>
-              </div>
-        </button>
+            </div>
+        </a>
 
       </div>
     </section>

@@ -42,7 +42,7 @@
                     <span class="item bg-info" data-name="pixel">Pixel</span>
                   </div>
                 </nav>
-              </div>
+            </div>
             @foreach ($posts as $post)
             <div class="image" data-name="{{ $post->data_name }}">
               <span><img src="{{ $post->img }}" alt="" /></span>
