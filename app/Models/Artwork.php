@@ -11,6 +11,15 @@ class Artwork extends Model
 
     protected $guarded = ['id'];
 
+    public function scopeFilter($query, array $filters)
+    {
+        
+        $query->when($filters['search'] ?? false, function($query, $search)
+        {
+            return $query->where('title', 'like', '%' . $search . '%');
+        });
+    }
+
     public function author()
     {
         return $this->belongsTo(User::class, 'user_id');

@@ -11,8 +11,19 @@
             <a class="nav-link {{ $active === "home" ? 'active' : '' }}" aria-current="page" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ $active === "artwork" ? 'active' : '' }}" href="/artwork">Artwork</a>
+            <div class="dropdown">
+              <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                Artwork
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <li><a class="dropdown-item" href="/artwork">Karya</a></li>
+                <li><a class="dropdown-item" href="#">Tag</a></li>
+              </ul>
+            </div>
           </li>
+          {{-- <li class="nav-item">
+            <a class="nav-link {{ $active === "artwork" ? 'active' : '' }}" href="/artwork">Artwork</a>
+          </li> --}}
           <li class="nav-item">
             <a class="nav-link {{ $active === "literatur" ? 'active' : '' }}" href="/literatur">Literatur</a>
           </li>

@@ -6,15 +6,17 @@ use App\Models\Artwork;
 use Illuminate\Http\Request;
 
 class ArtworkController extends Controller
-{
-    public function index(){
+{   
+    public function index()
+    {           
         return view('artwork', [
             "title" => "Artwork",
             "active" => "artwork",
-            "posts" => Artwork::latest()->get()
+            "posts" => Artwork::latest()->filter(request(['search']))->paginate(8)
         ]);
     }
-    public function show(Artwork $art){
+    public function show(Artwork $art)
+    {
         return view('artpage', [
             "title" => "Artpage",
             "active" => "artwork",
