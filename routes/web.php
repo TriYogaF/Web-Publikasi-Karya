@@ -26,6 +26,12 @@ Route::get('/', function () {
 Route::get('/artwork', [ArtworkController::class, 'index']);
 Route::get('/artwork/{art:slug}', [ArtworkController::class, 'show']);
 
+Route::get('/artwork/tag', function () {    
+    return view('tag', [
+        "title" => "Tag",
+        "active" => "artwork"
+    ]);
+});
 
 Route::get('/literatur', function () {
     return view('literatur', [

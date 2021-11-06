@@ -17,7 +17,7 @@
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <li><a class="dropdown-item" href="/artwork">Karya</a></li>
-                <li><a class="dropdown-item" href="#">Tag</a></li>
+                <li><a class="dropdown-item" href="/artwork/tag">Tag</a></li>
               </ul>
             </div>
           </li>
