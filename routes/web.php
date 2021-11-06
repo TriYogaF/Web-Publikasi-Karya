@@ -18,7 +18,8 @@ use App\Http\Controllers\ArtworkController;
 
 Route::get('/', function () {
     return view('index', [
-        "title" => "Home"
+        "title" => "Home",
+        "active" => "home"
     ]);
 });
 
@@ -28,13 +29,15 @@ Route::get('/artwork/{art:slug}', [ArtworkController::class, 'show']);
 
 Route::get('/literatur', function () {
     return view('literatur', [
-        "title" => "Literatur"
+        "title" => "Literatur",
+        "active" => "literatur"
     ]);
 });
 
 Route::get('/authors/{author:username}', function (User $author) {
     return view('author', [
         "title" => $author->name,
+        "active" => "author",
         "posts" => $author->artwork,
         "author" => $author
     ]);
