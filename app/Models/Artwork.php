@@ -16,7 +16,8 @@ class Artwork extends Model
         
         $query->when($filters['search'] ?? false, function($query, $search)
         {
-            return $query->where('title', 'like', '%' . $search . '%');
+            return $query->where('title', 'like', '%' . $search . '%')
+                        ->orWhere('data_name', 'like', '%' . $search . '%');
         });
     }
 
