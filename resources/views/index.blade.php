@@ -235,14 +235,4 @@
     </section>
     <!-- Akhir Content -->
 
-    <!-- About -->
-    <section id="about text-center">
-      <div class="container">
-        <div class="about bg-light border border-3 border-success mb-3 p-3 rounded-3">
-          <h2 class="fs-4 text-center">About Website</h2>
-          <p class="lead">Merupakan sebuah website yang berisi kumpulan karya dari orang-orang yang kesulitan mempublikasikan karyanya secara mandiri.</p>
-        </div>
-      </div>
-    </section>
-    <!-- Akhir About -->
 @endsection

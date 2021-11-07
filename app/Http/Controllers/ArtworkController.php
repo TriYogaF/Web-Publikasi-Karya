@@ -20,6 +20,7 @@ class ArtworkController extends Controller
         return view('artpage', [
             "title" => "Artpage",
             "active" => "artwork",
+            // "posts" => Artwork::latest()->filter(request(['search']))->get(),
             "post" => $art
         ]);
     }

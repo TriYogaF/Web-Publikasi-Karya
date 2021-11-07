@@ -57,13 +57,13 @@
           </div>
           @endforeach
         </div>
-        <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center my-3 bg">
           {{ $posts->links() }}
         </div>
       </div>
     </section>
     <!-- Akhir Content -->
-  </div>
+  </div> 
 
   @else
   <p class="fs-4 text-center">No artwork found.</p>

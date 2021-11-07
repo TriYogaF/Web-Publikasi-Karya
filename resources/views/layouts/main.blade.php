@@ -50,12 +50,12 @@
 
           <!-- Grid column -->
           <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-            <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
+            <h6 class="text-uppercase mb-4 font-weight-bold">Karya</h6>
             <p>
-              <a href="#" class="text-white text-decoration-none">Artwork</a>
+              <a href="/artwork" class="text-white text-decoration-none">Artwork</a>
             </p>
             <p>
-              <a href="#" class="text-white text-decoration-none">Literatur</a>
+              <a href="/literatur" class="text-white text-decoration-none">Literatur</a>
             </p>
           </div>
           <!-- Grid column -->
@@ -126,7 +126,7 @@
             <a
                class="btn btn-primary btn-floating m-1"
                style="background-color: #333333"
-               href="#!"
+               href="https://github.com/TriYogaF/Web-Publikasi-Karya" target="_blank"
                role="button"
                ><i class="bi bi-github"></i>
             </a>
