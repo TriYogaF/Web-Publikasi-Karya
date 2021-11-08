@@ -26,6 +26,7 @@ Route::get('/', function () {
     ]);
 });
 
+
 Route::get('/artwork', [ArtworkController::class, 'index']);
 Route::get('/artwork/{art:slug}', [ArtworkController::class, 'show']);
 
@@ -50,10 +51,4 @@ Route::get('/authors/{author:username}', function (User $author) {
 
 Route::get('/login', [LoginController::class, 'index']);
 Route::get('/register', [RegisterController::class, 'index']);
-
-// Route::get('/register', function () {
-//     return view('login.index', [
-//         "title" => "Register",
-//         "active" => "register"
-//     ]);
-// });
+Route::post('/register', [RegisterController::class, 'store']);
