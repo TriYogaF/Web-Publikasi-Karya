@@ -5,6 +5,7 @@ use App\Models\Artwork;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArtworkController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 use App\Http\Livewire\LoadArtwork;
 
 /*
@@ -48,10 +49,11 @@ Route::get('/authors/{author:username}', function (User $author) {
 });
 
 Route::get('/login', [LoginController::class, 'index']);
+Route::get('/register', [RegisterController::class, 'index']);
 
-Route::get('/register', function () {
-    return view('login.index', [
-        "title" => "Register",
-        "active" => "register"
-    ]);
-});
+// Route::get('/register', function () {
+//     return view('login.index', [
+//         "title" => "Register",
+//         "active" => "register"
+//     ]);
+// });

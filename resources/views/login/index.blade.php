@@ -27,7 +27,7 @@
           </div>
           <div class="row my-lg-3">
               <div class="col">
-                  <button class="w-100 btn btn-lg btn-outline-success" type="submit">Register</button>
+                  <a href="/register" class="btn w-100 btn btn-lg btn-outline-success" type="submit">Register</a>
               </div>
               <div class="col text-end">
                   <button class="w-100 btn btn-lg btn-success" type="submit">Sign in</button>
