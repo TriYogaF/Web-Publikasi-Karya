@@ -4,6 +4,7 @@ use App\Models\User;
 use App\Models\Artwork;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArtworkController;
+use App\Http\Controllers\LoginController;
 use App\Http\Livewire\LoadArtwork;
 
 /*
@@ -27,7 +28,7 @@ Route::get('/', function () {
 Route::get('/artwork', [ArtworkController::class, 'index']);
 Route::get('/artwork/{art:slug}', [ArtworkController::class, 'show']);
 
-Route::get('/load-artwork', [LoadArtwork::class, 'render']);
+// Route::get('/load-artwork', [LoadArtwork::class, 'render']);
 
 
 Route::get('/literatur', function () {
@@ -46,21 +47,11 @@ Route::get('/authors/{author:username}', function (User $author) {
     ]);
 });
 
-// Route::get('/authors/{author:username}/art', function (User $author) {
-//     return view('artwork', [
-//         "title" => "Artwork Author",
-//         "posts" => $author->artwork,
-//         // "author" => $author
-//     ]);
-// });
+Route::get('/login', [LoginController::class, 'index']);
 
-Route::get('/login', function () {
-    return view('login', [
-        "title" => "Login"
-    ]);
-});
 Route::get('/register', function () {
-    return view('register', [
-        "title" => "Register"
+    return view('login.index', [
+        "title" => "Register",
+        "active" => "register"
     ]);
 });

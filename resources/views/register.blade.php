@@ -1,10 +1,10 @@
 @extends('layouts/main')
 @section('css')
-    <link rel="stylesheet" type="text/css" href="../css/register.css" />
+    <link rel="stylesheet" href="../css/register.css" />
 @endsection
     
 @section('container')
-    <div class="container">
+    <div class="container" style="margin-bottom: 650px">
       <form class="form-container">
         <h3 class="textJudul mb-3">Registration Form</h3>
         <div class="mb-3">

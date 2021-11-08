@@ -1,9 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Manjari:wght@100;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Manjari:wght@100;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lobster+Two&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
 
 body {
     background-image: url(../assets/index/bg.png);
     font-family: "Zilla Slab", serif;
+}
+
+.navbar {
+    margin-bottom: 650px;
 }
 
 .form-container {
@@ -20,35 +24,32 @@ body {
     padding: 50px;
 }
 
-.textJudul {
-    font-family:'Manjari', sans-serif;
-}
-
+.textJudul,
 .textForm {
-    font-family:'Manjari', sans-serif;
+    font-family: "Manjari", sans-serif;
 }
 
 .btn {
     border-radius: 10px;
 }
 
-.text-link {
-    text-decoration: none;
-}
-
-.text-hover {
+.text-hover,
+.text-hover:hover {
     text-decoration: none;
 }
 
 .text-hover:hover {
-    text-decoration: none;
     font-weight: 600;
+}
+
+.judul {
+    font-family: "Lobster Two", cursive;
+}
+
+.text-link {
+    text-decoration: none;
 }
 
 .text-hijau {
     color: rgb(107, 167, 18);
 }
-
-.judul {
-    font-family: "Lobster Two", cursive;
-  }
