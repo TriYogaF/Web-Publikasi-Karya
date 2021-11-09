@@ -8,18 +8,18 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link {{ $active === "home" ? 'active' : '' }}" aria-current="page" href="/">Home</a>
+            <a class="nav-link {{ Request::is('') ? 'active' : '' }}" aria-current="page" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ $active === "artwork" ? 'active' : '' }}" href="/artwork">Artwork</a>
+            <a class="nav-link {{ Request::is('artwork') ? 'active' : '' }}" href="/artwork">Artwork</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ $active === "literatur" ? 'active' : '' }}" href="/literatur">Literatur</a>
+            <a class="nav-link {{ Request::is('literatur') ? 'active' : '' }}" href="/literatur">Literatur</a>
           </li>
           <ul class="navbar-nav ms-auto">
             @auth
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle {{ $active === "dashboard" ? 'active' : '' }}" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle {{ Request::is('dashboard') ? 'active' : '' }}" href="/dashboard" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="bi bi-person-square"></i>
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -35,7 +35,7 @@
             </li>
             @else
             <li class="nav-item">
-              <a class="btn btn-success {{ $active === "dashboard" ? 'login' : '' }}" href="/login" role="button"><i class="bi bi-person-square"></i></a>
+              <a class="btn btn-success {{ Request::is('login') ? 'active' : '' }}" href="/login" role="button"><i class="bi bi-person-square"></i></a>
             </li>
             @endauth
           </ul>

@@ -1,35 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster+Two&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
 
 body {
-  background-image: url(../assets/index/bg.png);
-  font-family: "Zilla Slab", serif;
+    background-image: url(../assets/index/bg.png);
+    font-family: "Zilla Slab", serif;
 }
 
 .judul {
-  font-family: "Lobster Two", cursive;
+    font-family: "Lobster Two", cursive;
 }
-
-/* .navbar,
-.footer {
-  background-color: #00cc7a;
-}
-
-.icon {
-  background-color: #4dffb8;
-} */
 
 .popart,
 .poplit,
 .popcreator {
-  background-color: white;
+    background-color: white;
 }
 
 .card-body {
-  background-color: #a3a3c2;
+    background-color: #a3a3c2;
 }
 
 .card-text {
-  font-weight: 600;
+    font-weight: 600;
 }
 
 /* .popart .card:hover,
@@ -39,10 +30,10 @@ body {
 } */
 
 .card:hover {
-  border: 2px solid black;
-  transition: 0.2s;
+    border: 2px solid black;
+    transition: 0.2s;
 }
 
 .carousel {
-  padding-top: 55px;
+    padding-top: 55px;
 }
