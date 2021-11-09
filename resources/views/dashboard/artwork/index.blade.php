@@ -5,8 +5,9 @@
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
       <h1 class="h2">Artwork</h1>
     </div>
-
-    <div class="table-responsive">
+    <a href="/dashboard/artwork/create" class="btn btn-info mb-3">Add New Artwork</a>
+    <div class="bg-light">
+      <div class="table-responsive">
         <table class="table table-striped table-hover align-middle text-center table-sm">
           <thead>
             <tr>
@@ -23,7 +24,7 @@
                     <td>{{ $loop->iteration }}</td>
                     <td class="text-start">{{ $post->title }}</td>
                     <td>{{ $post->data_name }}</td>
-                    <td><img src="{{ $post->img }}" alt="" width="70px" height="70px"></td>
+                    <td><img src="{{ $post->img }}" alt="" width="80px" height="80px"></td>
                     <td>
                         <a href="/dashboard/artwork/{{ $post->slug }}" class="badge bg-success"><span data-feather="eye"></span></a>
                         <a href="/dashboard/artwork/{{ $post->id }}" class="badge bg-primary"><span data-feather="edit"></span></a>
@@ -34,5 +35,6 @@
           </tbody>
         </table>
       </div>
+    </div>
 </main>
 @endsection

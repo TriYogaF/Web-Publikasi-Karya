@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Artwork;
 use Illuminate\Http\Request;
+use Cviebrock\EloquentSluggable\Services\SlugService;
 
 class DashboardArtworkController extends Controller
 {
@@ -26,7 +27,7 @@ class DashboardArtworkController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.artwork.create');
     }
 
     /**
@@ -85,5 +86,10 @@ class DashboardArtworkController extends Controller
     public function destroy(Artwork $artwork)
     {
         //
+    }
+
+    public function checkSlug(Request $request){
+        $slug = SlugService::createSlug(Artwork::class, 'slug', $request->title);
+        return response()->json(['slug' => $slug]);
     }
 }
