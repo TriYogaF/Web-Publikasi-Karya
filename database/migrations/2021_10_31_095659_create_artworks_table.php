@@ -16,7 +16,8 @@ class CreateArtworksTable extends Migration
         Schema::create('artworks', function (Blueprint $table) {
             $table->id();
             $table->foreignId("user_id");
-            $table->string("data_name");
+            $table->foreignId("category_id");
+            // $table->string("data_name");
             $table->string("title");
             $table->string("slug")->unique();
             $table->string("image")->nullable();

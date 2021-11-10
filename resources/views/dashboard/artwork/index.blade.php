@@ -29,12 +29,12 @@
                 <tr>
                     <td>{{ $loop->iteration }}</td>
                     <td class="text-start">{{ $post->title }}</td>
-                    <td>{{ $post->data_name }}</td>
+                    <td>{{ $post->category->name }}</td>
                     <td>
                       @if ($post->image)
                       <img src="{{ asset('storage/' . $post->image) }}" width="100px" height="70px" class="img-fluid" alt="..." />    
                       @else
-                      <img src="https://source.unsplash.com/1600x900/?{{ $post->data_name }}" width="100px" height="70px" class="img-fluid" alt="..." />    
+                      <img src="https://source.unsplash.com/1280x1080/?{{ $post->category->name }}" width="100px" height="70px" class="img-fluid" alt="..." />    
                       @endif</td>
                     <td>
                         <a href="/dashboard/artwork/{{ $post->slug }}" class="badge bg-success"><span data-feather="eye"></span></a>

@@ -26,21 +26,19 @@
               </div>
               @enderror
             </div>
-            {{-- Kategori belum sempurna ganti switch --}}
             <div class="mb-3">
-              <label for="data_name" class="form-label">Kategori</label>
-              <select class="form-select" id="data_name" name="data_name" required value="{{ old('data_name') }}" >
-                <option selected disabled value="">Pilih Kategori</option>
-                <option value="nature">Nature</option>
-                <option value="building">Building</option>
-                <option value="people">People</option>
-                <option value="drawing">Drawing</option>
-                <option value="miniature">Miniature</option>
-                <option value="abstrak">Abstrak</option>
-                <option value="pixel">Pixel</option>
-                <option value="other">Other</option>
+              <label for="category" class="form-label">Kategori</label>
+              <select class="form-select" name="category_id" required value="{{ old('category') }}" >
+                @foreach ($categories as $category)    
+                  @if (old('category_id') == $category->id)
+                  <option value="{{ $category->id }}" selected>{{ $category->name }}</option>    
+                  @else
+                  <option value="{{ $category->id }}">{{ $category->name }}</option>
+                  @endif
+                @endforeach
               </select>
             </div>
+
             <div class="mb-3">
               <label for="image" class="form-label">File Artwork</label>
               <img class="img-preview img-fluid mb-3">
