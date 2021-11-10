@@ -19,7 +19,7 @@ class CreateArtworksTable extends Migration
             $table->string("data_name");
             $table->string("title");
             $table->string("slug")->unique();
-            $table->string("img")->nullable();
+            $table->string("image")->nullable();
             $table->string("caption");
             $table->timestamp("published_at")->nullable();
             $table->timestamps();

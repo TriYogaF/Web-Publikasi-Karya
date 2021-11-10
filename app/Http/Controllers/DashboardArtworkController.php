@@ -42,8 +42,13 @@ class DashboardArtworkController extends Controller
             'title' => 'required|max:255',
             'slug' => 'required|unique:artworks',
             'data_name' => 'required',
+            'image' => 'image',
             'caption' => 'required'
         ]);
+
+        if($request->file('image')){
+            $validatedData['image'] = $request->file('image')->store('artwork-images');
+        }
 
         $validatedData['user_id'] = auth()->user()->id;
 

@@ -5,8 +5,8 @@
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
       <h1 class="h2">Tambah Artwork Baru</h1>
     </div>
-    <div class="col-lg-6">
-        <form action="/dashboard/artwork" method="post">
+    <div class="col-lg-7 bg-light p-3">
+        <form action="/dashboard/artwork" method="post" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
               <label for="title" class="form-label">Title</label>
@@ -20,12 +20,13 @@
             <div class="mb-3">
               <label for="slug" class="form-label">Slug</label>
               <input type="text" class="form-control @error('slug') is-invalid @enderror" id="slug" name="slug" required value="{{ old('slug') }}" >
-              @error('title')
+              @error('slug')
               <div class="invalid-feedback">
                   {{ $message }}
               </div>
               @enderror
             </div>
+            {{-- Kategori belum sempurna ganti switch --}}
             <div class="mb-3">
               <label for="data_name" class="form-label">Kategori</label>
               <select class="form-select" id="data_name" name="data_name" required value="{{ old('data_name') }}" >
@@ -41,12 +42,25 @@
               </select>
             </div>
             <div class="mb-3">
-                {{-- <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon03">Button</button> --}}
-              <label for="img" class="form-label">File</label>
-              <input type="file" class="form-control" id="img" name="img" required >
-              
+              <label for="image" class="form-label">File Artwork</label>
+              <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image">
+              @error('image')
+              <div class="invalid-feedback">
+                  {{ $message }}
+              </div>
+              @enderror
             </div>
             <div class="mb-3">
+              <label for="caption" class="form-label">Caption</label>
+              
+              <input id="caption" type="hidden" name="caption" value="{{ old('caption') }}">
+              <trix-editor input="caption"></trix-editor>
+              @error('caption')
+              <p class="text-danger">{{ $message }}</p>
+              @enderror
+            </div>
+
+            {{-- <div class="mb-3">
               <label for="caption" class="form-label">Caption</label>
               <textarea class="form-control  @error('caption') is-invalid @enderror" id="caption" name="caption" value="{{ old('caption') }}" rows="3" required ></textarea>           
               @error('caption')
@@ -54,7 +68,8 @@
                 {{ $message }}
               </div>
               @enderror
-            </div>
+            </div> --}}
+
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
     </div>
@@ -69,5 +84,9 @@
         .then(response => response.json())
         .then(data => slug.value = data.slug)
     });
+
+    document.addEventListener('trix-file-accept', function(e){
+      e.preventDefault();
+    })
 </script>
 @endsection

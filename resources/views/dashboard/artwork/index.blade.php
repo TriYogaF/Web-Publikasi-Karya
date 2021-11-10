@@ -30,7 +30,12 @@
                     <td>{{ $loop->iteration }}</td>
                     <td class="text-start">{{ $post->title }}</td>
                     <td>{{ $post->data_name }}</td>
-                    <td><img src="/assets/index/{{ $post->img }}" alt="" width="80px" height="80px"></td>
+                    <td>
+                      @if ($post->image)
+                      <img src="{{ asset('storage/' . $post->image) }}" width="100px" height="70px" class="img-fluid" alt="..." />    
+                      @else
+                      <img src="https://source.unsplash.com/1600x900/?{{ $post->data_name }}" width="100px" height="70px" class="img-fluid" alt="..." />    
+                      @endif</td>
                     <td>
                         <a href="/dashboard/artwork/{{ $post->slug }}" class="badge bg-success"><span data-feather="eye"></span></a>
                         <a href="/dashboard/artwork/{{ $post->slug }}/edit" class="badge bg-primary"><span data-feather="edit"></span></a>

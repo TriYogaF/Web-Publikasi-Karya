@@ -27,7 +27,7 @@
               </div>
               @enderror
             </div>
-            {{-- fitur old value belum sempurna --}}
+           {{-- Kategori belum sempurna ganti switch --}}
             <div class="mb-3">
               <label for="data_name" class="form-label">Kategori</label>
               <select class="form-select" id="data_name" name="data_name" required >
@@ -44,8 +44,8 @@
             </div>
             <div class="mb-3">
                 {{-- <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon03">Button</button> --}}
-              <label for="img" class="form-label">File</label>
-              <input type="file" class="form-control" id="img" name="img" required >
+              <label for="image" class="form-label">File</label>
+              <input type="file" class="form-control" id="image" name="image" required >
               
             </div>
             <div class="mb-3">

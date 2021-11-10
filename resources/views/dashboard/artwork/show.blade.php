@@ -18,10 +18,16 @@
             </div>
             <div class="row my-4 justify-content-center">
                 <div class="col-md-7">
-                    <img src="/assets/index/{{ $post->img }}" class="img-fluid" width="800px" height="600px" alt="..." />
+                    @if ($post->image)
+                    <div style="max-height: 500px; overflow:hidden">
+                        <img src="{{ asset('storage/' . $post->image) }}" class="img-fluid" alt="..." />    
+                    </div>
+                    @else
+                    <img src="https://source.unsplash.com/1280x1080/?{{ $post->data_name }}" class="img-fluid" alt="..." />    
+                    @endif
                     <figure class="text-center">
                         <h4 class="mt-1">{{ $post->title }}</h4>
-                        <figcaption class="blockquote">{{ $post->caption }}</figcaption>
+                        <figcaption class="blockquote">{!! $post->caption !!}</figcaption>
                     </figure>
                 </div>
             </div>
