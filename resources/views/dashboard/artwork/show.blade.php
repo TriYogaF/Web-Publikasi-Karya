@@ -8,13 +8,17 @@
             <div class="row my-4">
                 <div class="col">
                     <a href="/dashboard/artwork" class="btn btn-success"><span data-feather="arrow-left"></span></a>
-                    <a href="/dashboard/artwork" class="btn btn-primary"><span data-feather="edit"></span></a>
-                    <a href="/dashboard/artwork" class="btn btn-danger"><span data-feather="x-circle"></span></a>
+                    <a href="/dashboard/artwork/{{ $post->slug }}/edit" class="btn btn-primary"><span data-feather="edit"></span></a>
+                    <form action="/dashboard/artwork/{{ $post->slug }}" method="post" class="d-inline">
+                        @method('delete')
+                        @csrf
+                        <button class="btn btn-danger" onclick="return confirm('Apa anda yakin?')"><span data-feather="x-circle"></button>
+                      </form>
                 </div>
             </div>
             <div class="row my-4 justify-content-center">
                 <div class="col-md-7">
-                    <img src="{{ $post->img }}" class="img-fluid" width="800px" height="600px" alt="..." />
+                    <img src="/assets/index/{{ $post->img }}" class="img-fluid" width="800px" height="600px" alt="..." />
                     <figure class="text-center">
                         <h4 class="mt-1">{{ $post->title }}</h4>
                         <figcaption class="blockquote">{{ $post->caption }}</figcaption>

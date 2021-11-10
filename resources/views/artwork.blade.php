@@ -19,7 +19,7 @@
     {{-- Hero Banner --}}
     @if ($posts->count())
     <div class="card mb-3">
-      <img src="{{ $posts[0]->img }}" class="card-img-top" alt="...">
+      <img src="/assets/index/{{ $posts[0]->img }}" class="card-img-top" alt="...">
       <div class="card-body text-center">
         <h5 class="card-title"><a href="/artwork/{{ $posts[0]->slug }}">{{ $posts[0]->title }}</a></h5>
         <p><a href="/authors/{{ $posts[0]->author->username }}" class="text-decoration-none">by {{ $posts[0]->author->name }}</a></p>
@@ -30,7 +30,7 @@
     
     
     <!-- Filter -->
-    <div class="wrapper ">
+    {{-- <div class="wrapper ">
       <nav>
         <div class="items">
           <span class="item bg-info active" data-name="all">All</span>
@@ -43,7 +43,7 @@
           <span class="item bg-info" data-name="pixel">Pixel</span>
         </div>
       </nav>
-    </div>
+    </div> --}}
     <!-- Akhir Filter -->
     <!-- Content -->
     <section id="content">
@@ -52,7 +52,7 @@
         <div class="popart p-2 border border-3 border-success rounded-3">
           @foreach ($posts as $post)
           <div class="image" data-name="{{ $post->data_name }}">
-            <span><img src="{{ $post->img }}" alt="" /></span>
+            <span><img src="/assets/index/{{ $post->img }}" alt="" /></span>
             <span><a href="/artwork/{{ $post->slug }}" class="caption py-1">{{ $post->title }}</a></span>
           </div>
           @endforeach

@@ -3,14 +3,15 @@
 @section('container')
 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-      <h1 class="h2">Tambah Artwork Baru</h1>
+      <h1 class="h2">Edit Artwork</h1>
     </div>
     <div class="col-lg-6">
-        <form action="/dashboard/artwork" method="post">
-            @csrf
+        <form action="/dashboard/artwork/{{ $post->slug }}" method="post">
+          @method('put')  
+          @csrf
             <div class="mb-3">
               <label for="title" class="form-label">Title</label>
-              <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" required autofocus value="{{ old('title') }}">
+              <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" required autofocus value="{{ old('title', $post->title) }}">
               @error('title')
               <div class="invalid-feedback">
                   {{ $message }}
@@ -19,17 +20,18 @@
             </div>
             <div class="mb-3">
               <label for="slug" class="form-label">Slug</label>
-              <input type="text" class="form-control @error('slug') is-invalid @enderror" id="slug" name="slug" required value="{{ old('slug') }}" >
+              <input type="text" class="form-control @error('slug') is-invalid @enderror" id="slug" name="slug" required value="{{ old('slug', $post->slug) }}" >
               @error('title')
               <div class="invalid-feedback">
                   {{ $message }}
               </div>
               @enderror
             </div>
+            {{-- fitur old value belum sempurna --}}
             <div class="mb-3">
               <label for="data_name" class="form-label">Kategori</label>
-              <select class="form-select" id="data_name" name="data_name" required value="{{ old('data_name') }}" >
-                <option selected disabled value="">Pilih Kategori</option>
+              <select class="form-select" id="data_name" name="data_name" required >
+                <option selected disabled value="{{ old('data_name', $post->data_name) }}">Pilih Kategori</option>
                 <option value="nature">Nature</option>
                 <option value="building">Building</option>
                 <option value="people">People</option>
@@ -48,7 +50,7 @@
             </div>
             <div class="mb-3">
               <label for="caption" class="form-label">Caption</label>
-              <textarea class="form-control  @error('caption') is-invalid @enderror" id="caption" name="caption" value="{{ old('caption') }}" rows="3" required ></textarea>           
+              <textarea class="form-control  @error('caption') is-invalid @enderror" id="caption" name="caption" value="{{ old('caption', $post->caption) }}" rows="3" required ></textarea>           
               @error('caption')
               <div class="invalid-feedback">
                 {{ $message }}

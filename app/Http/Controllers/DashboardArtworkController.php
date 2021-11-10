@@ -38,9 +38,19 @@ class DashboardArtworkController extends Controller
      */
     public function store(Request $request)
     {
-        return $request;
-    }
+        $validatedData = $request->validate([
+            'title' => 'required|max:255',
+            'slug' => 'required|unique:artworks',
+            'data_name' => 'required',
+            'caption' => 'required'
+        ]);
 
+        $validatedData['user_id'] = auth()->user()->id;
+
+        Artwork::create($validatedData);
+
+        return redirect('/dashboard/artwork')->with('success', 'Artwork Berhasil Ditambahkan');
+    }
     /**
      * Display the specified resource.
      *
@@ -62,7 +72,9 @@ class DashboardArtworkController extends Controller
      */
     public function edit(Artwork $artwork)
     {
-        //
+        return view('dashboard.artwork.edit', [
+            'post' => $artwork
+        ]);
     }
 
     /**
@@ -74,7 +86,23 @@ class DashboardArtworkController extends Controller
      */
     public function update(Request $request, Artwork $artwork)
     {
-        //
+        $rules = [
+            'title' => 'required|max:255',
+            'data_name' => 'required',
+            'caption' => 'required'
+        ];
+        
+        if($request->slug != $artwork->slug) {
+            $rules['slug'] = 'required|unique:artworks';
+        }
+
+        $validatedData = $request->validate($rules);
+        $validatedData['user_id'] = auth()->user()->id;
+
+        Artwork::where('id', $artwork->id)
+            ->update($validatedData);
+
+        return redirect('/dashboard/artwork')->with('success', 'Artwork Berhasil Diupdate');
     }
 
     /**
@@ -85,7 +113,9 @@ class DashboardArtworkController extends Controller
      */
     public function destroy(Artwork $artwork)
     {
-        //
+        Artwork::destroy($artwork->id);
+
+        return redirect('/dashboard/artwork')->with('success', 'Artwork Berhasil Dihapus');
     }
 
     public function cek(Request $request){
