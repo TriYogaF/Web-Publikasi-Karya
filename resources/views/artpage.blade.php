@@ -18,10 +18,14 @@
       <div class="container">
         <!-- Popart -->
         <div class="box bg-light mt-2 p-1">
-          <img src="{{ $post->img }}" class="img-fluid" alt="..." />
+          @if ($post->image)
+                <img src="{{ asset('storage/' . $post->image) }}" class="img-fluid" alt="..." />    
+              @else
+                <img src="https://source.unsplash.com/1280x1080/?{{ $post->data_name }}" class="card-img-top" alt="..." />    
+              @endif
           <figure class="text-center">
             <h4 class="mt-1">{{ $post->title }}</h4>
-            <figcaption class="blockquote">{{ $post->caption }}</figcaption>
+            <figcaption class="blockquote">{!! $post->caption !!}</figcaption>
             <figcaption class="blockquote-footer"><a href="/authors/{{ $post->author->username }}">{{ $post->author->name }}</a></figcaption>
           </figure>
           <h5 class="p-2">Related Artwork</h5>

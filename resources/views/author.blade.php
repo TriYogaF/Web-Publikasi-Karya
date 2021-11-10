@@ -27,9 +27,9 @@
             </div>
           </div>
 
+          <h3>Artwork</h3>
           <div class="popart my-3 p-3 ">
-              <h3>Artwork</h3>
-            <div class="wrapper">
+            {{-- <div class="wrapper">
                 <nav>
                   <div class="items">
                     <span class="item bg-info active" data-name="all">All</span>
@@ -42,10 +42,16 @@
                     <span class="item bg-info" data-name="pixel">Pixel</span>
                   </div>
                 </nav>
-            </div>
+            </div> --}}
             @foreach ($posts as $post)
             <div class="image" data-name="{{ $post->data_name }}">
-              <span><img src="{{ $post->img }}" alt="" /></span>
+              <span>
+                @if ($post->image)
+                <img src="{{ asset('storage/' . $post->image) }}" class="img-fluid" alt="..." />    
+              @else
+                <img src="https://source.unsplash.com/1280x1080/?{{ $post->data_name }}" class="card-img-top" alt="..." />    
+              @endif
+              </span>
               <span><a href="/artwork/{{ $post->slug }}" class="caption py-1">{{ $post->title }}</a></span>
             </div>
             @endforeach

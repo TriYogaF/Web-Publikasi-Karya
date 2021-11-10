@@ -5,8 +5,8 @@
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
       <h1 class="h2">Edit Artwork</h1>
     </div>
-    <div class="col-lg-6">
-        <form action="/dashboard/artwork/{{ $post->slug }}" method="post">
+    <div class="col-lg-7 bg-light p-3 ">
+        <form action="/dashboard/artwork/{{ $post->slug }}" method="post" enctype="multipart/form-data">
           @method('put')  
           @csrf
             <div class="mb-3">
@@ -43,18 +43,27 @@
               </select>
             </div>
             <div class="mb-3">
-                {{-- <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon03">Button</button> --}}
-              <label for="image" class="form-label">File</label>
-              <input type="file" class="form-control" id="image" name="image" required >
-              
+              <label for="image" class="form-label">File Artwork</label>
+              <input type="hidden" name="oldArtwork" value="{{ $post->image }}">
+              @if ($post->image)
+                  <img src="{{ asset('storage/' . $post->image) }}" alt="" class="img-preview img-fluid mb-3 d-block">
+              @else
+              <img class="img-preview img-fluid mb-3">                
+              @endif
+              <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image" onchange="previewImage()">
+              @error('image')
+              <div class="invalid-feedback">
+                  {{ $message }}
+              </div>
+              @enderror
             </div>
             <div class="mb-3">
               <label for="caption" class="form-label">Caption</label>
-              <textarea class="form-control  @error('caption') is-invalid @enderror" id="caption" name="caption" value="{{ old('caption', $post->caption) }}" rows="3" required ></textarea>           
+              
+              <input id="caption" type="hidden" name="caption" value="{{ old('caption', $post->caption) }}">
+              <trix-editor input="caption"></trix-editor>
               @error('caption')
-              <div class="invalid-feedback">
-                {{ $message }}
-              </div>
+              <p class="text-danger">{{ $message }}</p>
               @enderror
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
@@ -71,5 +80,19 @@
         .then(response => response.json())
         .then(data => slug.value = data.slug)
     });
+
+    function previewImage(){
+      const image = document.querySelector('#image');
+      const imgPreview = document.querySelector('.img-preview');
+
+      imgPreview.style.display = 'block';
+
+      const oFReader = new FileReader();
+      oFReader.readAsDataURL(image.files[0]);
+
+      oFReader.onload = function(oFREvent){
+        imgPreview.src = oFREvent.target.result;
+      }
+    }
 </script>
 @endsection

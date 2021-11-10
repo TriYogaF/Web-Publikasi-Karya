@@ -17,15 +17,13 @@
                 </div>
             </div>
             <div class="row my-4 justify-content-center">
-                <div class="col-md-7">
+                <div class="col-md-10">
                     @if ($post->image)
-                    <div style="max-height: 500px; overflow:hidden">
-                        <img src="{{ asset('storage/' . $post->image) }}" class="img-fluid" alt="..." />    
-                    </div>
+                    <img src="{{ asset('storage/' . $post->image) }}" class="img-fluid" alt="..." />    
                     @else
                     <img src="https://source.unsplash.com/1280x1080/?{{ $post->data_name }}" class="img-fluid" alt="..." />    
                     @endif
-                    <figure class="text-center">
+                    <figure class="text-center mt-3 bg-light p-2">
                         <h4 class="mt-1">{{ $post->title }}</h4>
                         <figcaption class="blockquote">{!! $post->caption !!}</figcaption>
                     </figure>

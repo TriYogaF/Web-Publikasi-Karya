@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Artwork;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 
 class DashboardArtworkController extends Controller
@@ -90,18 +91,31 @@ class DashboardArtworkController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Artwork $artwork)
-    {
+    {   
+        // @dd($request);
         $rules = [
             'title' => 'required|max:255',
             'data_name' => 'required',
+            'image' => 'image',
             'caption' => 'required'
         ];
         
         if($request->slug != $artwork->slug) {
             $rules['slug'] = 'required|unique:artworks';
         }
-
+        
         $validatedData = $request->validate($rules);
+        
+        if($request->file('image')){
+            // if($artwork->image){
+            //     Storage::delete($artwork->image);
+            //     }
+            if($request->oldArtwork){
+                Storage::delete($request->oldArtwork);
+            }
+            $validatedData['image'] = $request->file('image')->store('artwork-images');
+        }
+
         $validatedData['user_id'] = auth()->user()->id;
 
         Artwork::where('id', $artwork->id)
@@ -118,6 +132,10 @@ class DashboardArtworkController extends Controller
      */
     public function destroy(Artwork $artwork)
     {
+        if($artwork->image){
+            Storage::delete($artwork->image);
+        }
+
         Artwork::destroy($artwork->id);
 
         return redirect('/dashboard/artwork')->with('success', 'Artwork Berhasil Dihapus');
