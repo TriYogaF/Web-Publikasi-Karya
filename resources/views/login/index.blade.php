@@ -8,9 +8,13 @@
 <div class="row justify-content-center my-lg-5">
   <div class="col-lg-4 ">  
     <main class="form-signin">
+      <div class="row justify-content-center">
+        <div class="col-3">
+          <img class="mb-4" src="../assets/index/1.gif" alt="" width="72" height="72">
+        </div>
+      </div>
       <form action="/login" method="post">
         @csrf
-          <img class="mb-4" src="../assets/index/1.gif" alt="" width="72" height="72">
           <h1 class="h3 mb-3 fw-normal text-center">Log in</h1>
       
           @if (session()->has('success'))    

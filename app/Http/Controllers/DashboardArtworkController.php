@@ -38,7 +38,7 @@ class DashboardArtworkController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return $request;
     }
 
     /**
@@ -88,7 +88,7 @@ class DashboardArtworkController extends Controller
         //
     }
 
-    public function checkSlug(Request $request){
+    public function cek(Request $request){
         $slug = SlugService::createSlug(Artwork::class, 'slug', $request->title);
         return response()->json(['slug' => $slug]);
     }

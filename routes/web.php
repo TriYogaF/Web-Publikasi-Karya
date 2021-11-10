@@ -65,5 +65,5 @@ Route::get('/dashboard', function(){
     ]);
 } )->middleware('auth');
 
-Route::get('/dashboard/artwork/checkSlug', [DashboardArtworkController::class], 'checkSlug')->middleware('auth');
+Route::get('/dashboard/artwork/cek', [DashboardArtworkController::class, 'cek'])->middleware('auth');
 Route::resource('/dashboard/artwork', DashboardArtworkController::class)->middleware('auth');

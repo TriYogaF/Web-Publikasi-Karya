@@ -8,7 +8,11 @@
 <div class="row justify-content-center my-lg-5">
   <div class="col-lg-4 ">
     <main class="form-register">
-        <img class="mb-4" src="../assets/index/1.gif" alt="" width="72" height="72">
+      <div class="row justify-content-center">
+        <div class="col-3">
+          <img class="mb-4" src="../assets/index/1.gif" alt="" width="72" height="72">
+        </div>
+      </div>
         <h1 class="textJudul h3 mb-3 fw-normal text-center">Registration Form</h1>
         <form action="/register" method="post">
         @csrf

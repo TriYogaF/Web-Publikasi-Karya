@@ -5,7 +5,7 @@
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
       <h1 class="h2">Artwork</h1>
     </div>
-    <a href="/dashboard/artwork/create" class="btn btn-info mb-3">Add New Artwork</a>
+    <a href="/dashboard/artwork/create" class="btn btn-info mb-3">Tambah Artwork Baru</a>
     <div class="bg-light">
       <div class="table-responsive">
         <table class="table table-striped table-hover align-middle text-center table-sm">
