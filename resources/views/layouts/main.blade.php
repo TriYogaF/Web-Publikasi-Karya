@@ -30,7 +30,7 @@
       <p>© by Web Publikasi Karya 2021</p>
     </footer> --}}
     <footer
-          class="text-center text-lg-start text-white mt-3"
+          class="text-center text-lg-start text-white"
           style="background-color: #3ddb92"
           >
     <!-- Grid container -->

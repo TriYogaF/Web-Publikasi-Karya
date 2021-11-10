@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="../css/stylePages.css" />
 @endsection
 @section('container')
-<div class="container bg-light my-2 p-2">
+<div class="container bg-light p-2">
 
   <div class="row justify-content-center">
     <div class="col-2">
@@ -34,22 +34,6 @@
       </div>
     </div>
     
-    <!-- Filter -->
-    {{-- <div class="wrapper ">
-      <nav>
-        <div class="items">
-          <span class="item bg-info active" data-name="all">All</span>
-          <span class="item bg-info" data-name="nature">Nature</span>
-          <span class="item bg-info" data-name="building">Building</span>
-          <span class="item bg-info" data-name="people">People</span>
-          <span class="item bg-info" data-name="drawing">Drawing</span>
-          <span class="item bg-info" data-name="miniature">Miniature</span>
-          <span class="item bg-info" data-name="abstrak">Abstrak</span>
-          <span class="item bg-info" data-name="pixel">Pixel</span>
-        </div>
-      </nav>
-    </div> --}}
-    <!-- Akhir Filter -->
 
     <!-- Content -->
     <section id="content">
@@ -65,12 +49,12 @@
                 <img src="https://source.unsplash.com/1280x1080/?{{ $post->data_name }}" class="card-img-top" alt="..." />    
               @endif
               <img src="/assets/index/{{ $post->image }}" alt="" />
-            </span>
+
             <span><a href="/artwork/{{ $post->slug }}" class="caption py-1">{{ $post->title }}</a></span>
           </div>
           @endforeach
         </div>
-        <div class="d-flex justify-content-center my-3 bg">
+        <div class="d-flex justify-content-center mt-4">
           {{ $posts->links() }}
         </div>
       </div>
