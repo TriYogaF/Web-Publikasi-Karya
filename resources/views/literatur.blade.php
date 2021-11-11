@@ -2,82 +2,75 @@
 @section('css')
     <link rel="stylesheet" href="../css/stylePages.css" />
 @endsection
-    
 @section('container')
-    <!-- Filter -->
-    <div class="wrapper">
-      <nav>
-        <div class="items">
-          <span class="item bg-warning active" data-name="all">All</span>
-          <span class="item bg-warning" data-name="adventure">Adventure</span>
-          <span class="item bg-warning" data-name="comedy">Comedy</span>
-          <span class="item bg-warning" data-name="drama">Drama</span>
-          <span class="item bg-warning" data-name="romantic">Romantic</span>
-          <span class="item bg-warning" data-name="history">History</span>
-          <span class="item bg-warning" data-name="biography">Biography</span>
-          <span class="item bg-warning" data-name="fantasy">Fantasy</span>
-        </div>
-      </nav>
+<div class="container bg-light p-2">
+
+  <div class="row justify-content-center">
+    <div class="col-2">
+      <h1 class="text-center">Literatur</h1>
     </div>
-    <!-- Akhir Filter -->
+  </div>
+
+@include('partials/search') 
+   
+
+  <div class="container">
+    {{-- Hero Banner --}}
+    @if ($literaturs->count())
+    <div class="card mb-3">
+      @if ($literaturs[0]->image)
+          <div style="max-height: 500px; overflow:hidden">
+              <img src="{{ asset('storage/' . $literaturs[0]->image) }}" class="img-fluid" alt="..." />    
+          </div>
+      @else
+        <div style="max-height: 500px; overflow:hidden">
+          <img src="https://source.unsplash.com/1280x1080/?{{ $literaturs[0]->category->name }}" class="card-img-top" alt="..." />    
+        </div>
+      @endif
+      <div class="card-body text-center">
+        <h5 class="card-title"><a href="/literatur/{{ $literaturs[0]->slug }}" class="text-decoration-none">{{ $literaturs[0]->title }}</a></h5>
+        <p><a href="/authors/{{ $literaturs[0]->author->username }}" class="text-decoration-none">by {{ $literaturs[0]->author->name }}</a></p>
+        <p class="card-text">{!! $literaturs[0]->caption !!}</p>
+        <p class="card-text"><small class="text-muted">Last updated {{ $literaturs[0]->created_at->diffForHumans() }}</small></p>
+      </div>
+    </div>
+    
+
     <!-- Content -->
     <section id="content">
-      <div class="container">
+      <div class="container my-3">
         <!-- Popart -->
-        <div class="popart my-3 p-3 border border-3 border-success rounded-3">
-          <div class="image" data-name="history">
-            <span><img src="../assets/literatur/l1.jpg" alt="" /></span>
-            <span><a href="#" class="caption py-1">Literatur 1</a></span>
+        <div class="popart p-2 border border-3 border-success rounded-3">
+          @foreach ($literaturs as $post)
+          <div class="image">
+            <span>
+              @if ($post->image)
+                <img src="{{ asset('storage/' . $post->image) }}" class="img-fluid" alt="..." />    
+              @else
+                <img src="https://source.unsplash.com/1280x1080/?{{ $post->category->name }}" class="card-img-top" alt="..." />    
+              @endif
+              <img src="/assets/index/{{ $post->image }}" alt="" />
+            </span>
+            <span><a href="/literatur/{{ $post->slug }}" class="caption py-1">{{ $post->title }}</a></span>
           </div>
-          <div class="image" data-name="biography">
-            <span><img src="../assets/literatur/l2.jpg" alt="" /></span>
-            <span><a href="#" class="caption py-1">Literatur 2</a></span>
-          </div>
-          <div class="image" data-name="drama">
-            <span><img src="../assets/literatur/l3.jpg" alt="" /></span>
-            <span><a href="#" class="caption py-1">Literatur 3</a></span>
-          </div>
-          <div class="image" data-name="fantasy">
-            <span><img src="../assets/literatur/l4.jpg" alt="" /></span>
-            <span><a href="#" class="caption py-1">Literatur 4</a></span>
-          </div>
-          <div class="image" data-name="drama">
-            <span><img src="../assets/literatur/l5.jpg" alt="" /></span>
-            <span><a href="#" class="caption py-1">Literatur 5</a></span>
-          </div>
-          <div class="image" data-name="romantic">
-            <span><img src="../assets/literatur/l6.jpg" alt="" /></span>
-            <span><a href="#" class="caption py-1">Literatur 6</a></span>
-          </div>
-          <div class="image" data-name="drama">
-            <span><img src="../assets/literatur/l7.jpg" alt="" /></span>
-            <span><a href="#" class="caption py-1">Literatur 7</a></span>
-          </div>
-          <div class="image" data-name="history">
-            <span><img src="../assets/literatur/l8.jpg" alt="" /></span>
-            <span><a href="#" class="caption py-1">Literatur 8</a></span>
-          </div>
-          <div class="image" data-name="fantasy">
-            <span><img src="../assets/literatur/l9.jpg" alt="" /></span>
-            <span><a href="#" class="caption py-1">Literatur 9</a></span>
-          </div>
-          <div class="image" data-name="comedy">
-            <span><img src="../assets/literatur/l10.jpg" alt="" /></span>
-            <span><a href="#" class="caption py-1">Literatur 10</a></span
-            >>
-          </div>
-          <div class="image" data-name="adventure">
-            <span><img src="../assets/literatur/l11.jpg" alt="" /></span>
-            <span><a href="#" class="caption py-1">Literatur 11</a></span
-            >>
-          </div>
-          <div class="image" data-name="biography">
-            <span><img src="../assets/literatur/l12.jpg" alt="" /></span>
-            <span><a href="#" class="caption py-1">Literatur 12</a></span
-            >>
-          </div>
+          @endforeach
+        </div>
+        <div class="d-flex justify-content-center mt-4">
+          {{ $literaturs->links() }}
         </div>
       </div>
     </section>
     <!-- Akhir Content -->
-    @endsection
+  </div> 
+
+  @else
+  <p class="fs-4 text-center">No literatur found.</p>
+  <div class="row justify-content-center">
+    <div class="col-5">
+      <img src="../assets/index/1.png" alt="">
+    </div>
+  </div>
+  @endif
+
+</div>
+@endsection

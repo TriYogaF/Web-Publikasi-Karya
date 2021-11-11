@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Artwork;
+use App\Models\ArtworkCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Cviebrock\EloquentSluggable\Services\SlugService;
@@ -28,7 +29,9 @@ class DashboardArtworkController extends Controller
      */
     public function create()
     {
-        return view('dashboard.artwork.create');
+        return view('dashboard.artwork.create', [
+            'categories' => ArtworkCategory::all()
+        ]);
     }
 
     /**
@@ -42,7 +45,7 @@ class DashboardArtworkController extends Controller
         $validatedData = $request->validate([
             'title' => 'required|max:255',
             'slug' => 'required|unique:artworks',
-            'data_name' => 'required',
+            'category_id' => 'required',
             'image' => 'image',
             'caption' => 'required'
         ]);
@@ -79,7 +82,8 @@ class DashboardArtworkController extends Controller
     public function edit(Artwork $artwork)
     {
         return view('dashboard.artwork.edit', [
-            'post' => $artwork
+            'post' => $artwork,
+            'categories' => ArtworkCategory::all()
         ]);
     }
 
@@ -95,7 +99,7 @@ class DashboardArtworkController extends Controller
         // @dd($request);
         $rules = [
             'title' => 'required|max:255',
-            'data_name' => 'required',
+            'category_id' => 'required',
             'image' => 'image',
             'caption' => 'required'
         ];
@@ -107,9 +111,6 @@ class DashboardArtworkController extends Controller
         $validatedData = $request->validate($rules);
         
         if($request->file('image')){
-            // if($artwork->image){
-            //     Storage::delete($artwork->image);
-            //     }
             if($request->oldArtwork){
                 Storage::delete($request->oldArtwork);
             }

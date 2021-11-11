@@ -29,54 +29,36 @@
 
           <h3>Artwork</h3>
           <div class="popart my-3 p-3 ">
-            {{-- <div class="wrapper">
-                <nav>
-                  <div class="items">
-                    <span class="item bg-info active" data-name="all">All</span>
-                    <span class="item bg-info" data-name="nature">Nature</span>
-                    <span class="item bg-info" data-name="building">Building</span>
-                    <span class="item bg-info" data-name="people">People</span>
-                    <span class="item bg-info" data-name="drawing">Drawing</span>
-                    <span class="item bg-info" data-name="miniature">Miniature</span>
-                    <span class="item bg-info" data-name="abstrak">Abstrak</span>
-                    <span class="item bg-info" data-name="pixel">Pixel</span>
-                  </div>
-                </nav>
-            </div> --}}
             @foreach ($posts as $post)
             <div class="image" data-name="{{ $post->data_name }}">
               <span>
                 @if ($post->image)
                 <img src="{{ asset('storage/' . $post->image) }}" class="img-fluid" alt="..." />    
               @else
-                <img src="https://source.unsplash.com/1280x1080/?{{ $post->data_name }}" class="card-img-top" alt="..." />    
+                <img src="https://source.unsplash.com/1280x1080/?{{ $post->category->name }}" class="card-img-top" alt="..." />    
               @endif
               </span>
               <span><a href="/artwork/{{ $post->slug }}" class="caption py-1">{{ $post->title }}</a></span>
             </div>
             @endforeach
           </div>
+          
+          <h3>Literatur</h3>
+          <div class="popart my-3 p-3 ">
+            @foreach ($literaturs as $literatur)
+            <div class="image" data-name="{{ $literatur->data_name }}">
+              <span>
+                @if ($literatur->image)
+                <img src="{{ asset('storage/' . $literatur->image) }}" class="img-fluid" alt="..." />    
+              @else
+                <img src="https://source.unsplash.com/1280x1080/?{{ $literatur->category->name }}" class="card-img-top" alt="..." />    
+              @endif
+              </span>
+              <span><a href="/artwork/{{ $literatur->slug }}" class="caption py-1">{{ $literatur->title }}</a></span>
+            </div>
+            @endforeach
+          </div>
 
-          {{-- <div class="row mb-3 mx-3">
-            <div class="col-sm-6">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Artwork</h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="/authors/{{ $author->username }}/art" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Literatur</h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="#" class="btn btn-primary ">Go somewhere</a>
-                </div>
-              </div>
-            </div>
-          </div> --}}
         </div>
       </div>
     </section>

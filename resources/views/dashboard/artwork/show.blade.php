@@ -21,9 +21,9 @@
                     @if ($post->image)
                     <img src="{{ asset('storage/' . $post->image) }}" class="img-fluid" alt="..." />    
                     @else
-                    <img src="https://source.unsplash.com/1280x1080/?{{ $post->data_name }}" class="img-fluid" alt="..." />    
+                    <img src="https://source.unsplash.com/1280x1080/?{{ $post->category->name }}" class="img-fluid" alt="..." />    
                     @endif
-                    <figure class="text-center mt-3 bg-light p-2">
+                    <figure class="text-center bg-light p-2">
                         <h4 class="mt-1">{{ $post->title }}</h4>
                         <figcaption class="blockquote">{!! $post->caption !!}</figcaption>
                     </figure>

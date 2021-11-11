@@ -2,15 +2,14 @@
 
 namespace App\Models;
 
-use App\Models\ArtworkCategory;
+use App\Models\LiteraturCategory;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-
-class Artwork extends Model
+class Literatur extends Model
 {
-    use HasFactory, Sluggable;
+    use HasFactory;
 
     protected $guarded = ['id'];
 
@@ -30,7 +29,7 @@ class Artwork extends Model
 
     public function category()
     {
-        return $this->belongsTo(ArtworkCategory::class);
+        return $this->belongsTo(LiteraturCategory::class);
     }
 
     public function getRouteKeyName()

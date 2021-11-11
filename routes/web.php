@@ -5,6 +5,8 @@ use App\Models\Artwork;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArtworkController;
 use App\Http\Controllers\DashboardArtworkController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LiteraturController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Livewire\LoadArtwork;
@@ -29,22 +31,19 @@ Route::get('/', function () {
 
 
 Route::get('/artwork', [ArtworkController::class, 'index']);
-Route::get('/artwork/{art:slug}', [ArtworkController::class, 'show']);
+Route::get('/artwork/{artwork:slug}', [ArtworkController::class, 'show']);
 
 // Route::get('/load-artwork', [LoadArtwork::class, 'render']);
 
+Route::get('/literatur', [LiteraturController::class, 'index']);
+Route::get('/literatur/{literatur:slug}', [LiteraturController::class, 'show']);
 
-Route::get('/literatur', function () {
-    return view('literatur', [
-        "title" => "Literatur",
-        "active" => "literatur"
-    ]);
-});
 
 Route::get('/authors/{author:username}', function (User $author) {
     return view('author', [
         "title" => $author->name,
         "active" => "author",
+        "literaturs" => $author->literatur,
         "posts" => $author->artwork,
         "author" => $author
     ]);
@@ -58,12 +57,7 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 
-Route::get('/dashboard', function(){
-    return view('dashboard.index',[
-        "title" => "dashboard",
-        "active" => "dashboard"
-    ]);
-} )->middleware('auth');
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 
 Route::get('/dashboard/artwork/cek', [DashboardArtworkController::class, 'cek'])->middleware('auth');
 Route::resource('/dashboard/artwork', DashboardArtworkController::class)->middleware('auth');
