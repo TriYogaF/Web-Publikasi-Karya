@@ -35,7 +35,8 @@
                       <img src="{{ asset('storage/' . $post->image) }}" width="100px" height="70px" class="img-fluid" alt="..." />    
                       @else
                       <img src="https://source.unsplash.com/1280x1080/?{{ $post->category->name }}" width="100px" height="70px" class="img-fluid" alt="..." />    
-                      @endif</td>
+                      @endif
+                    </td>
                     <td>
                         <a href="/dashboard/artwork/{{ $post->slug }}" class="badge bg-success"><span data-feather="eye"></span></a>
                         <a href="/dashboard/artwork/{{ $post->slug }}/edit" class="badge bg-primary"><span data-feather="edit"></span></a>

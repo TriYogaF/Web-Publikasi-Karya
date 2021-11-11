@@ -5,6 +5,7 @@ use App\Models\Artwork;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArtworkController;
 use App\Http\Controllers\DashboardArtworkController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LiteraturController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
@@ -39,7 +40,6 @@ Route::get('/literatur/{literatur:slug}', [LiteraturController::class, 'show']);
 
 
 Route::get('/authors/{author:username}', function (User $author) {
-    // dd($author->literatur);
     return view('author', [
         "title" => $author->name,
         "active" => "author",
@@ -57,12 +57,7 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 
-Route::get('/dashboard', function(){
-    return view('dashboard.index',[
-        "title" => "dashboard",
-        "active" => "dashboard"
-    ]);
-} )->middleware('auth');
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 
 Route::get('/dashboard/artwork/cek', [DashboardArtworkController::class, 'cek'])->middleware('auth');
 Route::resource('/dashboard/artwork', DashboardArtworkController::class)->middleware('auth');

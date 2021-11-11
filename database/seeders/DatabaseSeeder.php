@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
     {
         User::create([
             'name' => 'Tri Yoga Febriansyah',
-            'username' => 'Yoga',
+            'username' => 'Elqlyn',
             'email' => 'tri@gmail.com',
             'password' => bcrypt('password')
         ]);
@@ -38,8 +38,8 @@ class DatabaseSeeder extends Seeder
             'slug' => 'building'
         ]);
         LiteraturCategory::create([
-            'name' => 'Romance',
-            'slug' => 'romance'
+            'name' => 'Mystery',
+            'slug' => 'mystery'
         ]);
         LiteraturCategory::create([
             'name' => 'Comedy',
