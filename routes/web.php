@@ -5,6 +5,7 @@ use App\Models\Artwork;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArtworkController;
 use App\Http\Controllers\DashboardArtworkController;
+use App\Http\Controllers\LiteraturController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Livewire\LoadArtwork;
@@ -29,17 +30,13 @@ Route::get('/', function () {
 
 
 Route::get('/artwork', [ArtworkController::class, 'index']);
-Route::get('/artwork/{art:slug}', [ArtworkController::class, 'show']);
+Route::get('/artwork/{artwork:slug}', [ArtworkController::class, 'show']);
 
 // Route::get('/load-artwork', [LoadArtwork::class, 'render']);
 
+Route::get('/literatur', [LiteraturController::class, 'index']);
+Route::get('/literatur/{literatur:slug}', [LiteraturController::class, 'show']);
 
-Route::get('/literatur', function () {
-    return view('literatur', [
-        "title" => "Literatur",
-        "active" => "literatur"
-    ]);
-});
 
 Route::get('/authors/{author:username}', function (User $author) {
     return view('author', [

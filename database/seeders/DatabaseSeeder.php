@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use App\Models\Artwork;
 use App\Models\ArtworkCategory;
+use App\Models\Literatur;
+use App\Models\LiteraturCategory;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -35,6 +37,19 @@ class DatabaseSeeder extends Seeder
             'name' => 'Building',
             'slug' => 'building'
         ]);
+        LiteraturCategory::create([
+            'name' => 'Romance',
+            'slug' => 'romance'
+        ]);
+        LiteraturCategory::create([
+            'name' => 'Comedy',
+            'slug' => 'comedy'
+        ]);
+        LiteraturCategory::create([
+            'name' => 'Adventure',
+            'slug' => 'adventure'
+        ]);
         Artwork::factory(16)->create();
+        Literatur::factory(16)->create();
     }
 }

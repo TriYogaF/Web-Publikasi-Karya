@@ -29,7 +29,7 @@
         </div>
       @endif
       <div class="card-body text-center">
-        <h5 class="card-title"><a href="/artwork/{{ $posts[0]->slug }}">{{ $posts[0]->title }}</a></h5>
+        <h5 class="card-title"><a href="/artwork/{{ $posts[0]->slug }}" class="text-decoration-none">{{ $posts[0]->title }}</a></h5>
         <p><a href="/authors/{{ $posts[0]->author->username }}" class="text-decoration-none">by {{ $posts[0]->author->name }}</a></p>
         <p class="card-text">{!! $posts[0]->caption !!}</p>
         <p class="card-text"><small class="text-muted">Last updated {{ $posts[0]->created_at->diffForHumans() }}</small></p>
@@ -51,7 +51,7 @@
                 <img src="https://source.unsplash.com/1280x1080/?{{ $post->category->name }}" class="card-img-top" alt="..." />    
               @endif
               <img src="/assets/index/{{ $post->image }}" alt="" />
-
+            </span>
             <span><a href="/artwork/{{ $post->slug }}" class="caption py-1">{{ $post->title }}</a></span>
           </div>
           @endforeach

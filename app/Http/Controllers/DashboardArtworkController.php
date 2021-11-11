@@ -111,9 +111,6 @@ class DashboardArtworkController extends Controller
         $validatedData = $request->validate($rules);
         
         if($request->file('image')){
-            // if($artwork->image){
-            //     Storage::delete($artwork->image);
-            //     }
             if($request->oldArtwork){
                 Storage::delete($request->oldArtwork);
             }

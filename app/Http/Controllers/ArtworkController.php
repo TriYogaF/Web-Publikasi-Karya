@@ -15,12 +15,12 @@ class ArtworkController extends Controller
             "posts" => Artwork::latest()->filter(request(['search']))->paginate(8)
         ]);
     }
-    public function show(Artwork $art)
+    public function show(Artwork $artwork)
     {
         return view('artpage', [
             "title" => "Artpage",
             "active" => "artwork",
-            "post" => $art
+            "post" => $artwork
         ]);
     }
 }
