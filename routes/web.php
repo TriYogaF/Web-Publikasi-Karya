@@ -39,9 +39,11 @@ Route::get('/literatur/{literatur:slug}', [LiteraturController::class, 'show']);
 
 
 Route::get('/authors/{author:username}', function (User $author) {
+    // dd($author->literatur);
     return view('author', [
         "title" => $author->name,
         "active" => "author",
+        "literaturs" => $author->literatur,
         "posts" => $author->artwork,
         "author" => $author
     ]);
