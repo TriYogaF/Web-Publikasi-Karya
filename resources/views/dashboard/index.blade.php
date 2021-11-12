@@ -7,20 +7,24 @@
     </div>
     <div>
       <h4>Artwork</h4>
-      <div class="card-group">
+      <div class="row row-cols-1 row-cols-md-4 g-4">
         @foreach ($posts as $post)
-          <div class="card" style="width: 18rem;">
-            @if ($post->image)
-              <img src="{{ asset('storage/' . $post->image) }}" class="img-fluid" alt="..." />    
-            @else
-              <img src="https://source.unsplash.com/1280x1080/?{{ $post->category->name }}" class="img-fluid" alt="..." />    
-            @endif
-            <div class="card-body">
-              <h5 class="card-title">{{ $post->title }}</h5>
-              <p class="card-text">{!! $post->caption !!}</p>
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+              @if ($post->image)
+              <div style="max-height: 720px; overflow:hidden">
+                <img src="{{ asset('storage/' . $post->image) }}" style="max-width: 100%;
+                height: auto;" class="img-fluid" alt="..." />    
+              </div>
+              @else
+                <img src="https://source.unsplash.com/1280x720/?{{ $post->category->name }}" class="card-img-top" alt="..." />    
+              @endif
+              <div class="card-body">
+                <h5 class="card-title">{{ $post->title }}</h5>
+              </div>
             </div>
           </div>
-        @endforeach
+          @endforeach
       </div>
     </div>
   </main>

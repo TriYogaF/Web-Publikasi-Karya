@@ -20,7 +20,6 @@
               <th scope="col">No</th>
               <th scope="col" class="text-start">Title</th>
               <th scope="col">Kategori</th>
-              <th scope="col">Image</th>
               <th scope="col">Action</th>
             </tr>
           </thead>
@@ -30,13 +29,6 @@
                     <td>{{ $loop->iteration }}</td>
                     <td class="text-start">{{ $post->title }}</td>
                     <td>{{ $post->category->name }}</td>
-                    <td>
-                      @if ($post->image)
-                      <img src="{{ asset('storage/' . $post->image) }}" width="100px" height="70px" class="img-fluid" alt="..." />    
-                      @else
-                      <img src="https://source.unsplash.com/1280x1080/?{{ $post->category->name }}" width="100px" height="70px" class="img-fluid" alt="..." />    
-                      @endif
-                    </td>
                     <td>
                         <a href="/dashboard/artwork/{{ $post->slug }}" class="badge bg-success"><span data-feather="eye"></span></a>
                         <a href="/dashboard/artwork/{{ $post->slug }}/edit" class="badge bg-primary"><span data-feather="edit"></span></a>

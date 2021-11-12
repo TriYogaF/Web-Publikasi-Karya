@@ -20,12 +20,12 @@
     @if ($posts->count())
     <div class="card mb-3">
       @if ($posts[0]->image)
-          <div style="max-height: 500px; overflow:hidden">
+          <div style="max-height: 600px; overflow:hidden">
               <img src="{{ asset('storage/' . $posts[0]->image) }}" class="img-fluid" alt="..." />    
           </div>
       @else
         <div style="max-height: 500px; overflow:hidden">
-          <img src="https://source.unsplash.com/1280x1080/?{{ $posts[0]->category->name }}" class="card-img-top" alt="..." />    
+          <img src="https://source.unsplash.com/1280x720/?{{ $posts[0]->category->name }}" class="card-img-top" alt="..." />    
         </div>
       @endif
       <div class="card-body text-center">
@@ -46,9 +46,12 @@
           <div class="image">
             <span>
               @if ($post->image)
-                <img src="{{ asset('storage/' . $post->image) }}" class="img-fluid" alt="..." />    
+              <div>
+                <img src="{{ asset('storage/' . $post->image) }}" style="max-width: 100%;
+                height: auto;" class="img-fluid" alt="..." />    
+              </div>
               @else
-                <img src="https://source.unsplash.com/1280x1080/?{{ $post->category->name }}" class="card-img-top" alt="..." />    
+                <img src="https://source.unsplash.com/1280x720/?{{ $post->category->name }}" class="img-fluid" alt="..." />    
               @endif
               <img src="/assets/index/{{ $post->image }}" alt="" />
             </span>
