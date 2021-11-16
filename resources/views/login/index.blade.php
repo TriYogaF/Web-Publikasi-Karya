@@ -45,11 +45,6 @@
             <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
             <label for="password">Password</label>
           </div>
-          <div class="checkbox mb-3">
-            <label>
-              <input type="checkbox" value="remember-me"> Remember me
-            </label>
-          </div>
           <div class="row my-lg-3">
               <div class="col">
                   <a href="/register" class="btn w-100 btn btn-lg btn-outline-success" type="submit">Register</a>

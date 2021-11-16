@@ -2,14 +2,15 @@
 
 use App\Models\User;
 use App\Models\Artwork;
+use App\Http\Livewire\LoadArtwork;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ArtworkController;
-use App\Http\Controllers\DashboardArtworkController;
+use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LiteraturController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\RegisterController;
-use App\Http\Livewire\LoadArtwork;
+use App\Http\Controllers\DashboardArtworkController;
+use App\Http\Controllers\DashboardLiteraturController;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,3 +62,6 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('aut
 
 Route::get('/dashboard/artwork/cek', [DashboardArtworkController::class, 'cek'])->middleware('auth');
 Route::resource('/dashboard/artwork', DashboardArtworkController::class)->middleware('auth');
+
+Route::get('/dashboard/literatur/cek', [DashboardLiteraturController::class, 'cek'])->middleware('auth');
+Route::resource('/dashboard/literatur', DashboardLiteraturController::class)->middleware('auth');
