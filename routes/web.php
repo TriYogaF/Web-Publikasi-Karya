@@ -27,6 +27,7 @@ use App\Http\Controllers\DashboardLiteraturController;
 Route::get('/', function () {
     return view('index', [
         "title" => "Home",
+        'active'=> 'home',
         'posts' => Artwork::latest()->get(),
         'literaturs' => Literatur::latest()->get()
 

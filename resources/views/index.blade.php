@@ -71,143 +71,48 @@
             </div>
             <div class="row mt-2">
               
-              @foreach ($posts as $post)
-              <div class="col">
-                <div class="card my-lg-2" style="width: 18rem">
-                  {{-- <img src="{{ asset('storage/' . $post->image) }}" class="card-img-top" alt="1" /> --}}
-                  @if ($post->image)
-                      <img src="{{ asset('storage/' . $post->image) }}" class="card-img-top" alt="..." />
-                  @else
-                      <img src="https://source.unsplash.com/1280x720/?{{ $post->category->name }}" class="card-img-top" alt="..." />    
-                  @endif
-                  <div class="card-body">
-                    <p class="card-text">{{ $post->title }}</p>
+              @for ($i = 0; $i < 8; $i++)
+                <div class="col">
+                  <div class="card my-lg-2" style="width: 18rem">
+                    @if ($posts[$i]->image)
+                        <img src="{{ asset('storage/' . $posts[$i]->image) }}" class="card-img-top" alt="..." />
+                    @else
+                        <img src="https://source.unsplash.com/1280x720/?{{ $posts[$i]->category->name }}" class="card-img-top" alt="..." />    
+                    @endif
+                    <div class="card-body">
+                      <p class="card-text"><a href="/artwork/{{ $posts[$i]->slug }}" class="text-decoration-none text-dark">{{ $posts[$i]->title }}</a></p>
+                    </div>
                   </div>
                 </div>
-              </div>
-              @endforeach
-
-          </div>
-        </div>
-        <!-- Poplit -->
-        <div class="poplit mb-3 p-3 border border-3 border-success rounded-3">
-          <div class="row">
-            <div class="col">
-              <h2>Literatur Populer</h2>
-            </div>
-          </div>
-          <div class="row mt-2">
-            <div class="col">
-              <div class="card" style="width: 18rem">
-                <img src="../assets/literatur/l1.jpg" class="card-img-top" alt="1" />
-                <div class="card-body">
-                  <p class="card-text">Literatur pertama</p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card" style="width: 18rem">
-                <img src="../assets/literatur/l2.jpg" class="card-img-top" alt="1" />
-                <div class="card-body">
-                  <p class="card-text">Literatur kedua</p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card" style="width: 18rem">
-                <img src="../assets/literatur/l3.jpg" class="card-img-top" alt="1" />
-                <div class="card-body">
-                  <p class="card-text">Literatur ketiga</p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card" style="width: 18rem">
-                <img src="../assets/literatur/l4.jpg" class="card-img-top" alt="1" />
-                <div class="card-body">
-                  <p class="card-text">Literatur keempat</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row mt-2">
-            <div class="col">
-              <div class="card" style="width: 18rem">
-                <img src="../assets/literatur/l5.jpg" class="card-img-top" alt="1" />
-                <div class="card-body">
-                  <p class="card-text">Literatur kelima</p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card" style="width: 18rem">
-                <img src="../assets/literatur/l6.jpg" class="card-img-top" alt="1" />
-                <div class="card-body">
-                  <p class="card-text">Literatur keenam</p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card" style="width: 18rem">
-                <img src="../assets/literatur/l7.jpg" class="card-img-top" alt="1" />
-                <div class="card-body">
-                  <p class="card-text">Literatur ketujuh</p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card" style="width: 18rem">
-                <img src="../assets/literatur/l8.jpg" class="card-img-top" alt="1" />
-                <div class="card-body">
-                  <p class="card-text">Literatur kedelapan</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Popcreator -->
-        <div class="popcreator mb-3 p-3 border border-3 border-success rounded-3">
-          <div class="row">
-            <div class="col">
-              <h2>Kreator Populer</h2>
-            </div>
-          </div>
-          <div class="row mt-2">
-            <div class="col">
-              <div class="card rounded-circle overflow-hidden" style="height: 18rem">
-                <img src="../assets/index/k1.jpg" class="card-img-top" alt="1" />
-              </div>
-              <div class="card-body">
-                <p class="card-text text-center">Kreator pertama</p>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card rounded-circle overflow-hidden" style="height: 18rem">
-                <img src="../assets/index/k2.jpg" class="card-img-top" alt="1" />
-              </div>
-              <div class="card-body">
-                <p class="card-text text-center">Kreator kedua</p>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card rounded-circle overflow-hidden" style="height: 18rem">
-                <img src="../assets/index/k3.jpg" class="card-img-top" alt="1" />
-              </div>
-              <div class="card-body">
-                <p class="card-text text-center">Kreator ketiga</p>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card rounded-circle overflow-hidden" style="height: 18rem">
-                <img src="../assets/index/k4.jpg" class="card-img-top" alt="1" />
-              </div>
-              <div class="card-body">
-                <p class="card-text text-center">Kreator keempat</p>
-              </div>
-            </div>
+              @endfor
           </div>
         </div>
       </div>
+      <!-- Poplit -->
+      <div class="popart mb-5 p-3 border border-3 border-success rounded-3">
+        <div class="row">
+          <div class="col">
+            <h2>Literatur Terbaru</h2>
+          </div>
+          <div class="row mt-2">
+            
+            @for ($i = 0; $i < 8; $i++)
+              <div class="col">
+                <div class="card my-lg-2" style="width: 18rem">
+                  @if ($literaturs[$i]->image)
+                      <img src="{{ asset('storage/' . $literaturs[$i]->image) }}" class="card-img-top" alt="..." />
+                  @else
+                      <img src="https://source.unsplash.com/1280x720/?{{ $literaturs[$i]->category->name }}" class="card-img-top" alt="..." />    
+                  @endif
+                  <div class="card-body">
+                    <p class="card-text"><a href="/literatur/{{ $literaturs[$i]->slug }}" class="text-decoration-none text-dark">{{ $literaturs[$i]->title }}</a></p>
+                  </div>
+                </div>
+              </div>
+            @endfor
+        </div>
+      </div>
+
     </section>
     <!-- Akhir Content -->
 
