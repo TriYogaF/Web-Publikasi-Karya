@@ -19,7 +19,7 @@
     @if ($literaturs->count())
     <div class="card mb-3">
       @if ($literaturs[0]->image)
-          <div style="max-height: 500px; overflow:hidden">
+          <div style="max-height: 600px; overflow:hidden">
               <img src="{{ asset('storage/' . $literaturs[0]->image) }}" class="img-fluid" alt="..." />    
           </div>
       @else

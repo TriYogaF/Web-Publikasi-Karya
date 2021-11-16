@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Artwork;
+use App\Models\Literatur;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -12,7 +13,8 @@ class DashboardController extends Controller
         return view('dashboard.index',[
             "title" => "dashboard",
             "active" => "dashboard",
-            'posts' => Artwork::where('user_id', auth()->user()->id)->get()
+            'posts' => Artwork::where('user_id', auth()->user()->id)->get(),
+            'literaturs' => Literatur::where('user_id', auth()->user()->id)->get()
         ]);
     }
 }
