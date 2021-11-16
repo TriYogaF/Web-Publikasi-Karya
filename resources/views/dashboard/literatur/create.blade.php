@@ -50,10 +50,10 @@
               @enderror
             </div>
             <div class="mb-3">
-              <label for="caption" class="form-label">Caption</label>
-              <input id="caption" type="hidden" name="caption" value="{{ old('caption') }}">
-              <trix-editor input="caption"></trix-editor>
-              @error('caption')
+              <label for="body" class="form-label">Body</label>
+              <input id="body" type="hidden" name="body" value="{{ old('body') }}">
+              <trix-editor input="body"></trix-editor>
+              @error('body')
               <p class="text-danger">{{ $message }}</p>
               @enderror
             </div>

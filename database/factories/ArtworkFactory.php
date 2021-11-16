@@ -15,8 +15,8 @@ class ArtworkFactory extends Factory
     {
         return [
             'user_id' => mt_rand(1,4),
-            'category_id' => mt_rand(1,3),
-            'title' => $this->faker->sentence(mt_rand(2,4)),
+            'category_id' => mt_rand(1,5),
+            'title' => $this->faker->sentence(mt_rand(2,3)),
             'slug' => $this->faker->slug(3),
             'caption' => $this->faker->sentence(10)
         ];

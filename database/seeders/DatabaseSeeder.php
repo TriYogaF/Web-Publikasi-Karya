@@ -37,13 +37,21 @@ class DatabaseSeeder extends Seeder
             'name' => 'Building',
             'slug' => 'building'
         ]);
+        ArtworkCategory::create([
+            'name' => 'Miniature',
+            'slug' => 'miniature'
+        ]);
+        ArtworkCategory::create([
+            'name' => 'Sport',
+            'slug' => 'sport'
+        ]);
         LiteraturCategory::create([
             'name' => 'Mystery',
             'slug' => 'mystery'
         ]);
         LiteraturCategory::create([
-            'name' => 'Comedy',
-            'slug' => 'comedy'
+            'name' => 'Fantasy',
+            'slug' => 'fantasy'
         ]);
         LiteraturCategory::create([
             'name' => 'Adventure',

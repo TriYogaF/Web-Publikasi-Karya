@@ -13,16 +13,42 @@
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">
+          
           <div class="carousel-item active">
-            <img src="../assets/index/a.jpg" class="d-block img-fluid" alt="a" />
+            @if ($posts[0]->image)
+                <div style="max-height: 600px; overflow:hidden">
+                    <img src="{{ asset('storage/' . $posts[0]->image) }}" class="img-fluid" alt="a"  />    
+                </div>
+            @else
+              <div style="max-height: 500px; overflow:hidden">
+                <img src="https://source.unsplash.com/1280x720/?{{ $posts[0]->category->name }}" class="card-img-top" alt="..." />    
+              </div>
+            @endif
           </div>
           <div class="carousel-item">
-            <img src="../assets/index/b.jpg" class="d-block img-fluid" alt="b" />
+            @if ($posts[0]->image)
+                <div style="max-height: 600px; overflow:hidden">
+                    <img src="{{ asset('storage/' . $posts[1]->image) }}" class="img-fluid" alt="b" />    
+                </div>
+            @else
+              <div style="max-height: 500px; overflow:hidden">
+                <img src="https://source.unsplash.com/1280x720/?{{ $posts[1]->category->name }}" class="card-img-top" alt="..." />    
+              </div>
+            @endif
           </div>
           <div class="carousel-item">
-            <img src="../assets/index/c.jpg" class="d-block img-fluid" alt="c" />
+            @if ($posts[0]->image)
+                <div style="max-height: 600px; overflow:hidden">
+                    <img src="{{ asset('storage/' . $posts[2]->image) }}" class="img-fluid" alt="b" />    
+                </div>
+            @else
+              <div style="max-height: 500px; overflow:hidden">
+                <img src="https://source.unsplash.com/1280x720/?{{ $posts[2]->category->name }}" class="card-img-top" alt="..." />    
+              </div>
+            @endif
           </div>
         </div>
+
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
@@ -41,76 +67,26 @@
         <div class="popart mb-3 p-3 border border-3 border-success rounded-3">
           <div class="row">
             <div class="col">
-              <h2>Artwork Populer</h2>
+              <h2>Artwork Terbaru</h2>
             </div>
             <div class="row mt-2">
+              
+              @foreach ($posts as $post)
               <div class="col">
-                <div class="card" style="width: 18rem">
-                  <img src="../assets/artwork/a1.jpg" class="card-img-top" alt="1" />
+                <div class="card my-lg-2" style="width: 18rem">
+                  {{-- <img src="{{ asset('storage/' . $post->image) }}" class="card-img-top" alt="1" /> --}}
+                  @if ($post->image)
+                      <img src="{{ asset('storage/' . $post->image) }}" class="card-img-top" alt="..." />
+                  @else
+                      <img src="https://source.unsplash.com/1280x720/?{{ $post->category->name }}" class="card-img-top" alt="..." />    
+                  @endif
                   <div class="card-body">
-                    <p class="card-text">Artwork pertama</p>
+                    <p class="card-text">{{ $post->title }}</p>
                   </div>
                 </div>
               </div>
-              <div class="col">
-                <div class="card" style="width: 18rem">
-                  <img src="../assets/artwork/a2.jpg" class="card-img-top" alt="1" />
-                  <div class="card-body">
-                    <p class="card-text">Artwork kedua</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card" style="width: 18rem">
-                  <img src="../assets/artwork/a3.jpg" class="card-img-top" alt="1" />
-                  <div class="card-body">
-                    <p class="card-text">Artwork ketiga</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card" style="width: 18rem">
-                  <img src="../assets/artwork/a4.jpg" class="card-img-top" alt="1" />
-                  <div class="card-body">
-                    <p class="card-text">Artwork keempat</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row mt-2">
-              <div class="col">
-                <div class="card" style="width: 18rem">
-                  <img src="../assets/artwork/a5.jpg" class="card-img-top" alt="1" />
-                  <div class="card-body">
-                    <p class="card-text">Artwork kelima</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card" style="width: 18rem">
-                  <img src="../assets/artwork/a6.jpg" class="card-img-top" alt="1" />
-                  <div class="card-body">
-                    <p class="card-text">Artwork keenam</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card" style="width: 18rem">
-                  <img src="../assets/artwork/a7.jpg" class="card-img-top" alt="1" />
-                  <div class="card-body">
-                    <p class="card-text">Artwork ketujuh</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card" style="width: 18rem">
-                  <img src="../assets/artwork/a8.jpg" class="card-img-top" alt="1" />
-                  <div class="card-body">
-                    <p class="card-text">Artwork kedelapan</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+              @endforeach
+
           </div>
         </div>
         <!-- Poplit -->

@@ -14,7 +14,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{ Request::is('dashboard/literatur') ? 'active' : '' }}" href="/dashboard/literatur">
+          <a class="nav-link {{ Request::is('dashboard/literatur*') ? 'active' : '' }}" href="/dashboard/literatur">
             <span data-feather="book-open"></span>
             Literatur
           </a>

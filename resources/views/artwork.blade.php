@@ -17,6 +17,7 @@
 
   <div class="container">
     {{-- Hero Banner --}}
+    
     @if ($posts->count())
     <div class="card mb-3">
       @if ($posts[0]->image)

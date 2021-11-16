@@ -42,9 +42,10 @@ class DashboardLiteraturController extends Controller
      */
     public function store(Request $request)
     {
+        // @dd($request->title);
         $validatedData = $request->validate([
             'title' => 'required|max:255',
-            'slug' => 'required|unique:artworks',
+            'slug' => 'required|unique:literaturs',
             'category_id' => 'required',
             'image' => 'image',
             'body' => 'required'
@@ -64,7 +65,7 @@ class DashboardLiteraturController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Literatur $literatur
      * @return \Illuminate\Http\Response
      */
     public function show(Literatur $literatur)

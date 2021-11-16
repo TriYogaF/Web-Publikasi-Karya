@@ -2,6 +2,7 @@
 
 use App\Models\User;
 use App\Models\Artwork;
+use App\Models\Literatur;
 use App\Http\Livewire\LoadArtwork;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
@@ -26,7 +27,9 @@ use App\Http\Controllers\DashboardLiteraturController;
 Route::get('/', function () {
     return view('index', [
         "title" => "Home",
-        "active" => "home"
+        'posts' => Artwork::latest()->get(),
+        'literaturs' => Literatur::latest()->get()
+
     ]);
 });
 
