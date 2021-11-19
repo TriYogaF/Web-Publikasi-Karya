@@ -12,8 +12,22 @@ class ArtworkCategory extends Model
 
     protected $guarded = ['id'];
 
-    public function artworkCategory()
+    public function artwork()
     {
         return $this->hasMany(Artwork::class);
+    }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
+    public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'source' => 'name'
+            ]
+        ];
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminArtworkCategoryController;
+use App\Http\Controllers\AdminLiteraturCategoryController;
 use App\Models\User;
 use App\Models\Artwork;
 use App\Models\Literatur;
@@ -73,4 +74,8 @@ Route::get('/dashboard/literatur/cek', [DashboardLiteraturController::class, 'ce
 Route::resource('/dashboard/literatur', DashboardLiteraturController::class)->middleware('auth');
 
 
+Route::get('/dashboard/category/art/cek', [AdminArtworkCategoryController::class, 'cek'])->middleware('auth');
 Route::resource('/dashboard/category/art', AdminArtworkCategoryController::class)->except('show')->middleware('auth');
+
+Route::get('/dashboard/category/lit/cek', [AdminLiteraturCategoryController::class, 'cek'])->middleware('auth');
+Route::resource('/dashboard/category/lit', AdminLiteraturCategoryController::class)->except('show')->middleware('auth');

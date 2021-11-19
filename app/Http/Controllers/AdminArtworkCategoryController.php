@@ -45,7 +45,7 @@ class AdminArtworkCategoryController extends Controller
 
         ArtworkCategory::create($validatedData);
 
-        return redirect('/dashboard/category/artwork')->with('success', 'Kategori Berhasil Ditambahkan');
+        return redirect('/dashboard/category/art')->with('success', 'Kategori Berhasil Ditambahkan');
     }
 
     /**
@@ -94,7 +94,7 @@ class AdminArtworkCategoryController extends Controller
         ArtworkCategory::where('id', $artworkCategory->id)
             ->update($validatedData);
 
-        return redirect('/dashboard/category/artwork')->with('success', 'Kategori Berhasil Diupdate');
+        return redirect('/dashboard/category/art')->with('success', 'Kategori Berhasil Diupdate');
     }
 
     /**
@@ -107,11 +107,11 @@ class AdminArtworkCategoryController extends Controller
     {
         ArtworkCategory::destroy($artworkCategory->id);
 
-        return redirect('/dashboard/category/artwork')->with('success', 'Kategori Berhasil Dihapus');
+        return redirect('/dashboard/category/art')->with('success', 'Kategori Berhasil Dihapus');
     }
 
     public function cek(Request $request){
-        $slug = SlugService::createSlug(ArtworkCategory::class, 'slug', $request->title);
+        $slug = SlugService::createSlug(ArtworkCategory::class, 'slug', $request->name);
         return response()->json(['slug' => $slug]);
     }
 }

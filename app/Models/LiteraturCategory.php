@@ -15,4 +15,18 @@ class LiteraturCategory extends Model
     {
         return $this->hasMany(Literatur::class);
     }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
+    public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'source' => 'name'
+            ]
+        ];
+    }
 }

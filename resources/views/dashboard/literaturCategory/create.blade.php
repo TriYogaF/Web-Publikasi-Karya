@@ -6,7 +6,7 @@
       <h1 class="h2">Tambah Kategori Baru</h1>
     </div>
     <div class="col-lg-7 bg-light p-3">
-        <form action="/dashboard/category/art" method="post">
+        <form action="/dashboard/category/lit" method="post">
             @csrf
             <div class="mb-3">
               <label for="name" class="form-label">Name</label>
