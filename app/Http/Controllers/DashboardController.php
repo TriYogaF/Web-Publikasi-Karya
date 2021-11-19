@@ -20,6 +20,7 @@ class DashboardController extends Controller
 
     public function category()
     {
+        $this->authorize('admin');
         return view('dashboard.category');
     }
 }

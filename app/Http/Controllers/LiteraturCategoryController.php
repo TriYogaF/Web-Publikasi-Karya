@@ -14,7 +14,9 @@ class LiteraturCategoryController extends Controller
      */
     public function index()
     {
-        //
+        return view('dashboard.literaturCategory.index', [
+            'categories' => LiteraturCategory::all()
+        ]);
     }
 
     /**
@@ -24,7 +26,7 @@ class LiteraturCategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.literaturCategory.create');
     }
 
     /**
@@ -35,7 +37,14 @@ class LiteraturCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|unique:literatur_categories|max:255',
+            'slug' => 'required|unique:literatur_categories'
+        ]);
+
+        LiteraturCategory::create($validatedData);
+
+        return redirect('/dashboard/category/lit')->with('success', 'Kategori Berhasil Ditambahkan');
     }
 
     /**
@@ -80,6 +89,8 @@ class LiteraturCategoryController extends Controller
      */
     public function destroy(LiteraturCategory $literaturCategory)
     {
-        //
+        LiteraturCategory::destroy($literaturCategory->id);
+
+        return redirect('/dashboard/category/lit')->with('success', 'Kategori Berhasil Dihapus');
     }
 }

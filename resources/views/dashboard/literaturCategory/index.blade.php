@@ -19,7 +19,7 @@
                   <tr>
                     <th scope="col">No</th>
                     <th scope="col" class="text-start">Title</th>
-                    {{-- <th scope="col">Action</th> --}}
+                    <th scope="col">Action</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -27,14 +27,14 @@
                       <tr>
                           <td>{{ $loop->iteration }}</td>
                           <td class="text-start">{{ $category->name }}</td>
-                          {{-- <td>
+                          <td>
                               <a href="/dashboard/category/art/{{ $category->slug }}/edit" class="badge bg-primary"><span data-feather="edit"></span></a>
                               <form action="/dashboard/category/lit/{{ $category->slug }}" method="post" class="d-inline">
                                 @method('delete')
                                 @csrf
                                 <button class="badge bg-danger border-0" onclick="return confirm('Apa anda yakin?')"><span data-feather="x-circle"></button>
                               </form>
-                          </td> --}}
+                          </td>
                       </tr>
                   @endforeach
                 </tbody>
