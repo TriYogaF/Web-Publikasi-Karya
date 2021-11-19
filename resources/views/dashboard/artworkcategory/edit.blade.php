@@ -7,8 +7,8 @@
     </div>
     <div class="col-lg-7 bg-light p-3 ">
         <form action="/dashboard/category/art/{{ $category->slug }}" method="post">
-          @method('patch')  
           @csrf
+          @method('put')  
             <div class="mb-3">
               <label for="name" class="form-label">Name</label>
               <input type="text" class="form-control @error('name') is-invalid @enderror" id="title" name="name" required autofocus value="{{ old('name', $category->name) }}">

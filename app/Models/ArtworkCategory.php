@@ -4,11 +4,12 @@ namespace App\Models;
 
 use App\Models\Artwork;
 use Illuminate\Database\Eloquent\Model;
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class ArtworkCategory extends Model
 {
-    use HasFactory;
+    use HasFactory, Sluggable;
 
     protected $guarded = ['id'];
 

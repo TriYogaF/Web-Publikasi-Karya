@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ArtworkCategory;
 use Illuminate\Http\Request;
+use App\Models\ArtworkCategory;
+use Cviebrock\EloquentSluggable\Services\SlugService;
 
 class ArtworkCategoryController extends Controller
 {
@@ -14,7 +15,9 @@ class ArtworkCategoryController extends Controller
      */
     public function index()
     {
-        //
+        return view('dashboard.artworkCategory.index', [
+            'categories' => ArtworkCategory::all()
+        ]);
     }
 
     /**
@@ -24,7 +27,7 @@ class ArtworkCategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.artworkCategory.create');
     }
 
     /**
@@ -35,7 +38,14 @@ class ArtworkCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|unique:artwork_categories|max:255',
+            'slug' => 'required|unique:artwork_categories'
+        ]);
+
+        ArtworkCategory::create($validatedData);
+
+        return redirect('/dashboard/category/art')->with('success', 'Kategori Berhasil Ditambahkan');
     }
 
     /**
@@ -57,7 +67,9 @@ class ArtworkCategoryController extends Controller
      */
     public function edit(ArtworkCategory $artworkCategory)
     {
-        //
+        return view('dashboard.artworkCategory.edit',[
+            'category' => $artworkCategory
+        ]);
     }
 
     /**
@@ -69,7 +81,21 @@ class ArtworkCategoryController extends Controller
      */
     public function update(Request $request, ArtworkCategory $artworkCategory)
     {
-        //
+        
+        $rules = [
+            'name' => 'required|unique:artwork_categories|max:255',
+        ];
+        
+        if($request->slug != $artworkCategory->slug) {
+            $rules['slug'] = 'required|unique:artwork_categories';
+        }
+        
+        $validatedData = $request->validate($rules);
+        
+        ArtworkCategory::where('id', $artworkCategory->id)
+            ->update($validatedData);
+
+        return redirect('/dashboard/category/art')->with('success', 'Kategori Berhasil Diupdate');
     }
 
     /**
@@ -80,6 +106,13 @@ class ArtworkCategoryController extends Controller
      */
     public function destroy(ArtworkCategory $artworkCategory)
     {
-        //
+        ArtworkCategory::destroy($artworkCategory->id);
+
+        return redirect('/dashboard/category/art')->with('success', 'Kategori Berhasil Dihapus');
+    }
+
+    public function cek(Request $request){
+        $slug = SlugService::createSlug(ArtworkCategory::class, 'slug', $request->name);
+        return response()->json(['slug' => $slug]);
     }
 }

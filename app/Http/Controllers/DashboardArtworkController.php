@@ -96,7 +96,6 @@ class DashboardArtworkController extends Controller
      */
     public function update(Request $request, Artwork $artwork)
     {   
-        // @dd($request);
         $rules = [
             'title' => 'required|max:255',
             'category_id' => 'required',
