@@ -12,7 +12,7 @@ class ArtworkCategory extends Model
 
     protected $guarded = ['id'];
 
-    public function artwork()
+    public function artworkCategory()
     {
         return $this->hasMany(Artwork::class);
     }

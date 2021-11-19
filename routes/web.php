@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminArtworkCategoryController;
 use App\Models\User;
 use App\Models\Artwork;
 use App\Models\Literatur;
@@ -63,9 +64,13 @@ Route::get('/register', [RegisterController::class, 'index'])->middleware('guest
 Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
+Route::get('/dashboard/category', [DashboardController::class, 'category'])->middleware('auth');
 
 Route::get('/dashboard/artwork/cek', [DashboardArtworkController::class, 'cek'])->middleware('auth');
 Route::resource('/dashboard/artwork', DashboardArtworkController::class)->middleware('auth');
 
 Route::get('/dashboard/literatur/cek', [DashboardLiteraturController::class, 'cek'])->middleware('auth');
 Route::resource('/dashboard/literatur', DashboardLiteraturController::class)->middleware('auth');
+
+
+Route::resource('/dashboard/category/art', AdminArtworkCategoryController::class)->except('show')->middleware('auth');

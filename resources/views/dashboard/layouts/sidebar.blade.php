@@ -21,5 +21,15 @@
         </li>
       </ul>
 
+      <h6 class="sidebar-heading d-flex justify-content-center align-items-center px-3 mt-4 mb-2 text-muted">
+        <span>Administrator</span>
+      </h6>
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link {{ Request::is('dashboard/category*') ? 'active' : '' }}" aria-current="page" href="/dashboard/category">
+            <span data-feather="home"></span>
+            Category
+          </a>
+        </li>
     </div>
   </nav>

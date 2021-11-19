@@ -17,4 +17,9 @@ class DashboardController extends Controller
             'literaturs' => Literatur::where('user_id', auth()->user()->id)->get()
         ]);
     }
+
+    public function category()
+    {
+        return view('dashboard.category');
+    }
 }
